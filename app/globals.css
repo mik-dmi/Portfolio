@@ -72,6 +72,10 @@ body {
   -webkit-animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
+.social-link {
+  text-decoration: none;
+  animation: colorChange 1s infinite; /* Apply the animation to the links */
+}
 
 @-webkit-keyframes slide-top {
   0% {
@@ -83,6 +87,19 @@ body {
     transform: translateY(0);
   }
 }
+@keyframes colorChange {
+  0% {
+    color: #9e0a0c; /* Initial color */
+  }
+  50% {
+    color: #0a8f9e; /* Color after 0.5s (50% of the animation) */
+  }
+  100% {
+    color: #0a9e19; /* Back to the initial color after 1s (100% of the animation) */
+  }
+}
+
+
 
 @keyframes slide-top {
   0% {

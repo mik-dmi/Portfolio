@@ -21,7 +21,7 @@ const Header = () => {
     <header className='bg-[#0a192f]  pt-[0.5rem]'>
       <div className='flex items-center justify-between mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl'> 
         <Link href="/">
-          <h1 className='text-4xl font-bold'>Header</h1>
+          <h1 className='text-4xl text-white font-bold'>Header</h1>
         </Link>
         <nav className="hidden gap-11 lg:flex 2xl:ml-16">
         {links.map((link, id) => (
@@ -71,20 +71,7 @@ const Header = () => {
 
        
         </div>
-        <div className='flex fixed flex-col top-[35%] left-0'>
-                <ul>
-                  <li>
-                    <Link href={"/#contact-section"} className="text-lg font-semibold text-white transition duration-100 hover:text-primary">
-                      L
-                    </Link>
-                  </li>
-                </ul>
-        </div>
-
-
-
-
-
+        
 
 
 
