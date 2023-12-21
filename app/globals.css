@@ -13,7 +13,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
  
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 335.5 76.2% 53.9%;
     --primary-foreground: 210 40% 98%;
  
     --secondary: 210 40% 96.1%;
@@ -72,9 +72,15 @@ body {
   -webkit-animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
-.social-link {
-  text-decoration: none;
-  animation: colorChange 1s infinite; /* Apply the animation to the links */
+.active{
+  color: #d2d8ea;
+  transform: scale(1.2);
+}
+.headersColor{
+  color:#ccd6f6;
+}
+.paragraphColor{
+  color:#8892b0;
 }
 
 @-webkit-keyframes slide-top {
@@ -87,19 +93,6 @@ body {
     transform: translateY(0);
   }
 }
-@keyframes colorChange {
-  0% {
-    color: #9e0a0c; /* Initial color */
-  }
-  50% {
-    color: #0a8f9e; /* Color after 0.5s (50% of the animation) */
-  }
-  100% {
-    color: #0a9e19; /* Back to the initial color after 1s (100% of the animation) */
-  }
-}
-
-
 
 @keyframes slide-top {
   0% {

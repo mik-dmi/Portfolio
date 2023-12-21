@@ -3,7 +3,7 @@ import close from "./close.svg";
 
 
 export {
-
+  
   menu,
   close,
 };

@@ -1,5 +1,5 @@
-import Link from 'next/link'
-import React from 'react'
+"use client"
+import React, { useState, useEffect } from 'react';
 import {
   FaGithub,
   FaLinkedin,
@@ -8,28 +8,38 @@ import { BsFillPersonLinesFill } from 'react-icons/bs';
 
 
 const Hero = () => {
+    const socialLinks = [
+      { href: 'https://linkedin.com/', icon: <FaLinkedin size={25} /> },
+      { href: 'https://github.com/', icon: <FaGithub size={25} /> },
+      { href: 'https://stackoverflow.com/', icon: <BsFillPersonLinesFill size={25} /> },
+    ];
+  
+    const [activeLink, setActiveLink] = useState(0);
+  
+    useEffect(() => {
+      const interval = setInterval(() => {
+        setActiveLink((prevActiveLink) => (prevActiveLink + 1) % socialLinks.length);
+      }, 1000);
+  
+      return () => clearInterval(interval);
+    }, [activeLink, socialLinks.length]);
+
+
+
   return (
     <div className=' w-full flex h-screen'>
       
       <div className='flex  flex-col justify-end left-0 items-center  '>
         <ul>
-                  <li className='my-[2rem] flex justify-center items-center'>
-                    <a href={"https://linkedin.com/"} target="_blank" className="social-link text-lg font-semibold text-[#ccd6f6] hover:text-white transition duration-100 hover:text-primary">
-                      <FaLinkedin size = {25} />
-                    </a>
-                  </li>
-                  <li className='my-[2rem] flex justify-center items-center'>
-                    <a href={"https://github.com/"} target="_blank" className="social-link text-lg font-semibold text-[#ccd6f6] hover:text-white transition duration-100 hover:text-primary">
-                      <FaGithub size={25} />
-                    </a>
-                  </li>
-                  <li className='my-[2rem] flex justify-center items-center'>
-                    <a href={"https://stackoverflow.com/"} target="_blank"className="social-link  text-lg font-semibold  text-[#ccd6f6] hover:text-white transition duration-100 hover:text-primary">
-                      <BsFillPersonLinesFill size={25} />
-
-                    </a>
-                  </li>
+          {socialLinks.map((link, index) => (
+            <li key={index} className={`my-[2rem] text-[#8892b0] flex justify-center items-center ${activeLink === index ? 'active' : ''}`}>
+              <a href={link.href} target="_blank" className="">
+                {link.icon}
+              </a>
+            </li>
+          ))}
         </ul>
+
         <div className='flex '>
           <div className="h-[5rem] w-[0.2rem] bg-[#8892b0] "/>
   
@@ -37,14 +47,14 @@ const Hero = () => {
       </div>
       <div>
         <div className='max-w-[1000px] mx-auto pl-16 flex flex-col justify-center h-full'>
-          <p className='text-pink-600'>Hi, my name is</p>
-          <h1 className='text-4xl sm:text-7xl font-bold text-[#ccd6f6]'>
+          <p className='text-primary'>Hi, my name is</p>
+          <h1 className='text-4xl sm:text-7xl font-bold headersColor'>
             Miguel Caridade 
           </h1>
-          <h2 className='text-4xl sm:text-7xl font-bold text-[#8892b0]'>
+          <h2 className='text-4xl sm:text-7xl font-bold paragraphColor'>
             I'm a Software Engineer.
           </h2>
-          <p className='text-[#8892b0] py-4 max-w-[700px]'>
+          <p className='paragraphColor py-4 max-w-[700px]'>
             I’m a Web Developer that focuses on Frontend. I specialize in crafting seamless 
             and responsive web applications to enhance user interactions online.
           </p>
