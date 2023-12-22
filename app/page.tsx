@@ -5,9 +5,9 @@ import Project from "./components/Projects";
 export default function Home() {
   return (
     <div className="bg-[#0a192f]  h-screen absolute top-0 -z-10 w-full"> 
-      <div className=" mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl relative">
+      <div className=" bg-[#0a192f] mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl relative">
         <Hero/>
-        <div className="bg-[#0a192f]">
+        <div className=" mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl">
           <About/>
           <Project/>
         </div>
