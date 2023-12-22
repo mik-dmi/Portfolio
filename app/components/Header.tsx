@@ -18,8 +18,8 @@ const Header = () => {
   const pathname = usePathname();
   const [toggle, setToggle] = useState(false);
   return (
-    <header className='bg-[#0a192f]  pt-[0.5rem]'>
-      <div className='flex items-center justify-between mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl'> 
+    <header className=' pt-[0.5rem]'>
+      <div className='flex items-center justify-between '> 
         <Link href="/">
           <h1 className='text-4xl text-white font-bold'>Header</h1>
         </Link>
