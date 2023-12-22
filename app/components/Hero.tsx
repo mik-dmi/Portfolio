@@ -7,6 +7,7 @@ import {
 import { BsFillPersonLinesFill } from 'react-icons/bs';
 import { useTransform, useScroll, motion } from 'framer-motion';
 import Header from './Header';
+import About from './About';
 
 
 const Hero = () => {
@@ -32,13 +33,13 @@ const Hero = () => {
       target: targetRef,
 
     })
-    const rotate = useTransform(scrollYProgress, [0,1], ["0deg" ,"90deg"])
+    const rotate = useTransform(scrollYProgress, [0,0.25,1], ["0deg" ,"0deg" ,"-90deg"])
     const scale = useTransform(scrollYProgress, [0,1], ["1" ,"0"])
-
+    const aboutSectionScale =  useTransform(scrollYProgress, [0,0.5,1], [0,0,1])
 
 
   return (
-    <div ref={targetRef} className='relative h-[300vh]'>
+    <div ref={targetRef} className='relative h-[200vh]'>
         <div className=' w-full  flex h-screen        sticky top-0   '>
           <motion.div
           className='relative h-full w-full  bg-[#0a192f] origen-center'
@@ -91,6 +92,16 @@ const Hero = () => {
               </div>
             </div>
           </motion.div> 
+          <motion.div
+          style={{ scale: aboutSectionScale }}
+          className='pointer-events-none absolute inset-x-0 z-[-5] bottom-0'
+          
+          >
+            <div className='mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl  place-content-end'>
+            <About/>
+            </div>
+        
+          </motion.div>
 
         </div>
           

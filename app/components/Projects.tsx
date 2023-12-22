@@ -36,7 +36,7 @@ function Project({
   imageUrl,
 }:ProjectInterface){
   return(
-    <section className=' group bg-gray-100 max-w-[62rem] sm:h-[25rem] border
+    <section id="projects-section" className=' group bg-gray-100 max-w-[62rem] sm:h-[25rem] border
      border-black/5 overflow-hidden sm:pr-8 relative mb-3 sm:mb-8 last:mb-0 even:pl-2 hover:bg-gray-200 transition'>
       <div className='pt-4 pb-6 h-full px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] flex flex-col group-even:ml-[29rem]'>
         <h3 className='text-2xl font-semibold mb-2'>{title}</h3>
