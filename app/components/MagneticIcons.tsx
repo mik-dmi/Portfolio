@@ -10,7 +10,6 @@ function MagneticIcons({ children }: MagneticIconsProps) {
   
   const ref = useRef<HTMLElement | null>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
-
   const mouseMove = (e: React.MouseEvent) => {
     const { clientX, clientY } = e;
 

@@ -33,77 +33,80 @@ const Hero = () => {
       target: targetRef,
 
     })
-    const rotate = useTransform(scrollYProgress, [0,0.25,1], ["0deg" ,"0deg" ,"-90deg"])
-    const scale = useTransform(scrollYProgress, [0,1], ["1" ,"0"])
-    const aboutSectionScale =  useTransform(scrollYProgress, [0,0.5,1], [0,0,1])
+    const hue = useTransform(scrollYProgress, [0, 0.25 ,0.6, 0.95 ,1], [0,0, 40, 65 ,100]);
+    const opacity = useTransform(scrollYProgress, [0, 0.6, 1], [1, 0 ,0]);
 
+    const backgroundColor = useTransform(
+      hue,
+      [0, 100],
+      ['#0a192f', 'rgb(248, 250, 252)']
+    );
 
   return (
-    <div ref={targetRef} className='relative h-[200vh]'>
-        <div className=' w-full  flex h-screen        sticky top-0   '>
+
+        <div ref={targetRef} className=' w-full  flex    '>
           <motion.div
-          className='relative h-full w-full  bg-[#0a192f] origen-center'
-          style={{
-            rotate,
-            scale
-          }}
+            className='relative h-full w-full  bg-[#0a192f] origen-center'
+            style={{ backgroundColor }} 
           >
-            <div className='mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl '>
+
+            <motion.div 
+            className=' h-screen  mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl  flex flex-col justify-between mb-[2rem] '
+            style={{ opacity }}
+            >
+  
               <Header/>
-              <div className=' flex  flex-col justify-end left-0 items-center  '>
-                <ul>
-                  {socialLinks.map((link, index) => (
-                    <li key={index} className={`my-[2rem] text-[#8892b0] flex justify-center items-center ${activeLink === index ? 'active' : ''}`}>
-                      <a href={link.href} target="_blank" className="">
-                        {link.icon}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-
+          
                 <div className='flex '>
-                  <div className="h-[5rem] w-[0.2rem] bg-[#8892b0] "/>
-          
-                </div>
-              </div>
-              <div>
-                  <div className='max-w-[1000px] mx-auto pl-16 flex flex-col justify-center h-full'>
-                    <p className='text-primary'>Hi, my name is</p>
-                    <h1 className='text-4xl sm:text-7xl font-bold headersColor'>
-                      Miguel Caridade 
-                    </h1>
-                    <h2 className='text-4xl sm:text-7xl font-bold paragraphColor'>
-                      I'm a Software Engineer.
-                    </h2>
-                    <p className='paragraphColor leading-relaxed py-4 max-w-[700px]'>
-                      I’m a Web Developer that focuses on Frontend. I specialize in crafting seamless 
-                      and responsive web applications to enhance user interactions online.
-                    </p>
-                    <div>
-                      <button className='text-white group border-2 px-6 py-3 my-2 flex items-center hover:bg-pink-600 hover:border-pink-600'>
-                        View Work
-                        <span className='group-hover:rotate-90 duration-300'>
-                        { /*<HiArrowNarrowRight className='ml-3 ' />*/}
-                        </span>
-                      </button>
-                    </div>
-                  </div>
+                  <div className=' flex  flex-col justify-end bottom-0 left-4 items-center  '>
+                    <ul>
+                      {socialLinks.map((link, index) => (
+                        <li key={index} className={`my-[2rem] text-[#8892b0] flex justify-center items-center ${activeLink === index ? 'active' : ''}`}>
+                          <a href={link.href} target="_blank" className="">
+                            {link.icon}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
 
-              </div>
-            </div>
-          </motion.div> 
-          <motion.div
-          style={{ scale: aboutSectionScale }}
-          className='pointer-events-none absolute inset-x-0 z-[-5] bottom-0'
+                    <div className='flex '>
+                      <div className="h-[5rem] w-[0.2rem] bg-[#8892b0] "/>
+              
+                    </div>
+                  </div>   
+                    <div className='max-w-[1000px]  pb-[15rem] m-auto pl-16 flex flex-col justify-center h-full'>
+                      <p className='text-primary'>Hi, my name is</p>
+                      <h1 className='text-4xl sm:text-7xl font-bold headersColorHero'>
+                        Miguel Caridade 
+                      </h1>
+                      <h2 className='text-4xl sm:text-7xl font-bold paragraphColorHero'>
+                        I'm a Software Engineer.
+                      </h2>
+                      <p className='paragraphColorHero leading-relaxed py-4 max-w-[700px]'>
+                        I’m a Web Developer that focuses on Frontend. I specialize in crafting seamless 
+                        and responsive web applications to enhance user interactions online.
+                      </p>
+                      <div>
+                        <button className='text-white group border-2 px-6 py-3 my-2 flex items-center hover:bg-pink-600 hover:border-pink-600'>
+                          View Work
+                          <span className='group-hover:rotate-90 duration-300'>
+                          { /*<HiArrowNarrowRight className='ml-3 ' />*/}
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                </div>
+            </motion.div>
           
-          >
-            <div className='mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl  place-content-end'>
+
+            <div className='mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl '>
             <About/>
             </div>
+          </motion.div> 
         
-          </motion.div>
+          
 
-        </div>
+        
           
     </div>
     
