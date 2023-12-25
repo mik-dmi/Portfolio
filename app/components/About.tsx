@@ -2,12 +2,15 @@
 import React from 'react'
 import MagneticIcons from './MagneticIcons'
 import SectionHeadings from './SectionHeadings'
+import Image from 'next/image'
+import { profilePic } from '../assets'
 
 const About = () => {   
   return (
     <section className='flex w-full py-[2rem] px-[1rem] min-h-[40rem]'>
 
-        <div className=' w-[50%] flex items-center justify-center'>
+        <div className=' w-[50%] flex items-start justify-center'>
+            <Image src={profilePic} alt="Profile picture" quality={95} width={400} className='profilePic '/>
         </div>
             
         <div className=' w-[50%] px-[2rem] pb-[2rem]'>

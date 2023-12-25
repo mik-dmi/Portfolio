@@ -1,22 +1,24 @@
+"use client"
 import { motion } from 'framer-motion';
-import React, { useRef, useState } from 'react';
+import React, { ReactNode, useRef, useState } from 'react';
 
 interface MagneticIconsProps {
-  children: React.ReactNode; // Use React.ReactNode instead of string
+  children: ReactNode;
 }
 
-function MagneticIcons({ children }: MagneticIconsProps) {
-  const magnetic = useRef<HTMLDivElement | null>(null);
+function MagneticText({ children }: MagneticIconsProps) {
+  const ref = useRef<HTMLDivElement | null>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
-
   const mouseMove = (e: React.MouseEvent) => {
     const { clientX, clientY } = e;
-    const boundingClientRect = magnetic.current?.getBoundingClientRect();
+
+    // Use optional chaining to handle the null case
+    const boundingClientRect = ref.current?.getBoundingClientRect();
 
     if (boundingClientRect) {
       const { width, height, left, top } = boundingClientRect;
-      const x = (clientX - (left + width / 2)) * 0.7;
-      const y = (clientY - (top + height / 2) ) * 0.7;
+      const x = (clientX - (left + width / 2)) * 0.3;
+      const y = (clientY - (top + height / 2) ) * 0.3;
       setPosition({ x, y });
     }
   };
@@ -31,13 +33,14 @@ function MagneticIcons({ children }: MagneticIconsProps) {
     <motion.div
       onMouseMove={mouseMove}
       onMouseLeave={mouseLeave}
-      ref={magnetic}
+      ref={ref}
       animate={{ x, y }}
-      transition={{ type: 'spring', stiffness: 150, damping: 4, mass: 0.5 }}
+      className='w-full h-full flex items-center justify-center '
+      
     >
-      {children} {/* Use children directly */}
+      {children}
     </motion.div>
   );
 }
 
-export default MagneticIcons;
+export default MagneticText;
