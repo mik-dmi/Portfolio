@@ -42,7 +42,7 @@ const Hero = () => {
     const backgroundColor = useTransform(
       hue,
       [0, 100],
-      ['#0a192f', 'rgb(243 244 246 )']
+      ['#0a192f', '#f5f5f7']
     );
 
     const [isHovered, setIsHovered] = useState(false);
@@ -70,7 +70,7 @@ const Hero = () => {
   
               <Header/>
           
-                <div className='flex '>
+                <div className='flex scroll-mt-28'>
                   <div className=' flex  flex-col justify-end bottom-0 left-4 items-center  '>
                     <ul>
                       {socialLinks.map((link, index) => (

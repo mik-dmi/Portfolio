@@ -7,10 +7,10 @@ import { profilePic } from '../assets'
 
 const About = () => {   
   return (
-    <section className='flex w-full py-[2rem] px-[1rem] min-h-[40rem]'>
+    <section className='flex w-full pt-[2rem] mb-28 scroll-mt-28 px-[1rem] min-h-[40rem]'>
 
         <div className=' w-[50%] flex items-start justify-center'>
-            <Image src={profilePic} alt="Profile picture" quality={95} width={400} className='profilePic '/>
+            <Image src={profilePic} alt="Profile picture" quality={95} width={400} placeholder="blur" priority={true} className='profilePic '/>
         </div>
             
         <div className=' w-[50%] px-[2rem] pb-[2rem]'>
