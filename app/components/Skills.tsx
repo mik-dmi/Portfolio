@@ -162,7 +162,7 @@ const Skills = () => {
                     style={{
                       transform: "translateZ(50px)",
                     }}
-                    className='text-[1.5rem] py-4 headersColor headersColor '
+                    className='tracking-wider text-[1.5rem] py-4 headersColor headersColor '
                   >
                     {tag}
                   </p>

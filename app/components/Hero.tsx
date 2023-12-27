@@ -35,9 +35,9 @@ const Hero = () => {
       target: targetRef,
 
     })
-    const hue = useTransform(scrollYProgress, [0, 0.25 ,0.6, 0.95 ,1], [0,0, 40, 65 ,100]);
-    const opacity = useTransform(scrollYProgress, [0, 0.6, 1], [1, 0 ,0]);
-    const opacityAboutSection = useTransform(scrollYProgress, [0, 0.7, 1], [0, 0 ,1]);
+    const hue = useTransform(scrollYProgress, [0, 0.25 ,0.6, 0.70, 0.9 ,1], [0,0, 40, 65,100 ,100]);
+    const opacity = useTransform(scrollYProgress, [0, 0.7, 1], [1, 0 ,0]);
+    const opacityAboutSection = useTransform(scrollYProgress, [0, 0.7, 1], [0, 0,1]);
 
     const backgroundColor = useTransform(
       hue,
@@ -70,7 +70,7 @@ const Hero = () => {
   
               <Header/>
           
-                <div className='flex scroll-mt-28'>
+                <div className='flex scroll-mt-28 h-full'>
                   <div className=' flex  flex-col justify-end bottom-0 left-4 items-center  '>
                     <ul>
                       {socialLinks.map((link, index) => (
@@ -87,15 +87,15 @@ const Hero = () => {
               
                     </div>
                   </div>   
-                    <div className='max-w-[1000px]  pb-[15rem] m-auto pl-16 flex flex-col justify-center h-full'>
+                    <div className=' max-w-[55rem]  my-auto  pl-[14rem] pb-5 flex flex-col justify-center h-full'>
                       <p className='text-primary'>Hi, my name is</p>
-                      <h1 className='text-4xl sm:text-7xl font-bold headersColorHero '>
-                        Miguel XXXXXX
+                      <h1 className='w-fit text-4xl sm:text-7xl font-bold headersColorHero '>
+                        Miguel Caridade
                       </h1>
-                      <h2 className='text-4xl sm:text-7xl font-bold paragraphColorHero'>
+                      <h2 className='w-fit flex flex-wrap text-4xl sm:text-7xl font-bold paragraphColorHero'>
                         I'm a Software Engineer.
                       </h2>
-                      <p className='paragraphColorHero leading-relaxed py-4 max-w-[700px]'>
+                      <p className=' w-fit paragraphColorHero leading-relaxed py-4 max-w-[700px]'>
                         I’m a Web Developer that focuses on Frontend. I specialize in crafting seamless 
                         and responsive web applications to enhance user interactions online.
                       </p>
@@ -108,7 +108,7 @@ const Hero = () => {
                         </button>
                       </div>
                     </div>
-                    <div className='flex items-end justify-center overflow-hidden relative h-fit self-end '>
+                    <div className='flex items-end ml-auto justify-center overflow-hidden relative h-fit self-end '>
             
                       <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
                         width="1080.000000pt" height="1080.000000pt" viewBox="0 0 1080.000000 1080.000000"
@@ -279,7 +279,7 @@ const Hero = () => {
                         </g>
                       </svg>
 
-                     <div className='flex items-center justify-center text-primary  font-semibold 
+                     <div className='flex  items-center justify-center text-primary  font-semibold 
                         absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 p-[5rem] 
                         '>
                           <MagneticIcons>
@@ -295,28 +295,17 @@ const Hero = () => {
                             
                             </div>
                             </MagneticIcons>
-                          
-                        </div> 
-                        
-                     
-                      
+                        </div>                      
                     </div>
                 </div>
             </motion.div>
-          
-
             <motion.div 
             className='mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl '
             style={{ opacity: opacityAboutSection }} 
             >
             <About/>
             </motion.div>
-          </motion.div> 
-        
-          
-
-        
-          
+          </motion.div>     
     </div>
     
   )
