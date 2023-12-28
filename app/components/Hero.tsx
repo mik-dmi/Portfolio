@@ -35,12 +35,12 @@ const Hero = () => {
       target: targetRef,
 
     })
-    const hue = useTransform(scrollYProgress, [0, 0.25 ,0.6, 0.70, 0.9 ,1], [0,0, 40, 65,100 ,100]);
-    const opacity = useTransform(scrollYProgress, [0, 0.7, 1], [1, 0 ,0]);
+    const hueHero = useTransform(scrollYProgress, [0, 0.25 ,0.6, 0.70, 0.9 ,1], [0,0, 40, 65,100 ,100]);
+    const opacityHero = useTransform(scrollYProgress, [0, 0.7, 1], [1, 0 ,0]);
     const opacityAboutSection = useTransform(scrollYProgress, [0, 0.7, 1], [0, 0,1]);
 
-    const backgroundColor = useTransform(
-      hue,
+    const backgroundColorHero = useTransform(
+      hueHero,
       [0, 100],
       ['#0a192f', '#f5f5f7']
     );
@@ -60,12 +60,12 @@ const Hero = () => {
         <div ref={targetRef} className=' w-full  flex    '>
           <motion.div
             className='relative h-full w-full  bg-[#0a192f] origen-center'
-            style={{ backgroundColor }} 
+            style={{ backgroundColor: backgroundColorHero }} 
           >
 
             <motion.div 
-            className=' h-screen  mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl  flex flex-col justify-between mb-[2rem] '
-            style={{ opacity }}
+            className=' h-screen  lg:mx-auto  px-4 sm:px-6 lg:max-w-7xl  flex flex-col justify-between mb-[2rem] '
+            style={{ opacity: opacityHero}}
             >
   
               <Header/>
@@ -101,7 +101,7 @@ const Hero = () => {
                       </p>
                       <div>
                         <button className='text-white group border-2 px-6 py-3 my-2 flex items-center hover:bg-pink-600 hover:border-pink-600'>
-                          View Work
+                          Download Resume
                           <span className='group-hover:rotate-90 duration-300'>
                           { /*<HiArrowNarrowRight className='ml-3 ' />*/}
                           </span>

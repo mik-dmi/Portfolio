@@ -1,5 +1,14 @@
-import React from 'react'
 import {martialGearScreenShot, diveRightScreenShot,caliBrunchScreenShot , gotScreenShot } from "../app/assets/projects_images"
+
+
+
+export  const linksDropDownMenu = [
+    { name: "Home", href: "/" },
+    { name: "About", href: "/#about-section" },
+    { name: "Projects", href: "/#projects-section" }, 
+    { name: "Contact", href: "/#contact-section" },
+ ] as const;
+
 
 export const projectsData = [
     {
