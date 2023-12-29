@@ -109,7 +109,22 @@ body {
   perspective-origin: left;
 }
 
-
+@keyframes moveUpDown {
+  0%, 20%,70%, 100% {
+    top: 0;
+    
+   
+    
+  }
+  30% {
+    top: -35px;
+    
+  }
+  60% {
+    top: -35px;
+   
+  }
+}
 @keyframes profile_animate{
   0%{
     border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;

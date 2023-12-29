@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 
 import { Poppins } from 'next/font/google'
 import './globals.css'
+import HamburgerMenu from './components/HamburgerMenu'
 
 const poppins = Poppins({ 
   subsets: ['latin'],
@@ -23,10 +24,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className='scroll-smooth'>
-      
+     
       <body className={`${poppins.variable}  text-[#1d1d1f] bg-[#f5f5f7]`}>
-      
-      
+ 
    
       {children}
       </body>

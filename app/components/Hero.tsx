@@ -6,8 +6,6 @@ import {
 } from 'react-icons/fa';
 import { BsFillPersonLinesFill } from 'react-icons/bs';
 import { useTransform, useScroll, motion } from 'framer-motion';
-import Header from './Header';
-import About from './About';
 import Link from 'next/link';
 
 import MagneticIcons from './MagneticIcons';
@@ -30,20 +28,7 @@ const Hero = () => {
       return () => clearInterval(interval);
     }, [activeLink, socialLinks.length]);
 
-    const targetRef = useRef(null);
-    const {scrollYProgress} = useScroll({
-      target: targetRef,
-
-    })
-    const hueHero = useTransform(scrollYProgress, [0, 0.25 ,0.6, 0.70, 0.9 ,1], [0,0, 40, 65,100 ,100]);
-    const opacityHero = useTransform(scrollYProgress, [0, 0.7, 1], [1, 0 ,0]);
-    const opacityAboutSection = useTransform(scrollYProgress, [0, 0.7, 1], [0, 0,1]);
-
-    const backgroundColorHero = useTransform(
-      hueHero,
-      [0, 100],
-      ['#0a192f', '#f5f5f7']
-    );
+   
 
     const [isHovered, setIsHovered] = useState(false);
 
@@ -57,20 +42,9 @@ const Hero = () => {
 
   return (
 
-        <div ref={targetRef} className=' w-full  flex    '>
-          <motion.div
-            className='relative h-full w-full  bg-[#0a192f] origen-center'
-            style={{ backgroundColor: backgroundColorHero }} 
-          >
-
-            <motion.div 
-            className=' h-screen  lg:mx-auto  px-4 sm:px-6 lg:max-w-7xl  flex flex-col justify-between mb-[2rem] '
-            style={{ opacity: opacityHero}}
-            >
-  
-              <Header/>
+            
           
-                <div className='flex scroll-mt-28 h-full'>
+          <div className='flex scroll-mt-28 h-full'>
                   <div className=' flex  flex-col justify-end bottom-0 left-4 items-center  '>
                     <ul>
                       {socialLinks.map((link, index) => (
@@ -297,16 +271,10 @@ const Hero = () => {
                             </MagneticIcons>
                         </div>                      
                     </div>
-                </div>
-            </motion.div>
-            <motion.div 
-            className='mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl '
-            style={{ opacity: opacityAboutSection }} 
-            >
-            <About/>
-            </motion.div>
-          </motion.div>     
-    </div>
+          </div>
+           
+
+  
     
   )
 }

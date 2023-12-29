@@ -12,7 +12,7 @@ const footerLinks = [
   { name: "Resume", href: "/" },
 ]
 
-export const slideIn = {
+const slideIn = {
   initial: {
       opacity: 0,
       y: 20
@@ -67,7 +67,7 @@ const perspective = {
 
 const DropMenuLinks = () => {
   return (
-    <div className='flex flex-col justify-between'>
+    <div className='flex flex-col justify-between pl-12'>
       <div
       className=' flex flex-col  gap-6 box-border pt-[3rem] text-4xl font-bol '>
         {linksDropDownMenu.map((nav,index)=>(

@@ -57,22 +57,6 @@ const Skills = () => {
 
 
 
-    const fateInAnimation = {
-        initial:{
-            opacity:0,
-            y:100,
-
-        },
-        animate: (index: number) => ({
-            opacity:1,
-            y: 0,
-            scale: 1, 
-            transition:{
-                delay: 0.05 *index
-            }, 
-        }),
-    }
-
     return (
         <section className='flex flex-col scroll-mt-28 justify-center items-center mb-40 sm:mb-60'>
           <SectionHeadings subHeader={"My Technical Knowledge"} header={"My Skills"} />
