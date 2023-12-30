@@ -4,19 +4,19 @@ import {
   FaGithub,
   FaLinkedin,
 } from 'react-icons/fa';
-import { BsFillPersonLinesFill } from 'react-icons/bs';
-import { useTransform, useScroll, motion } from 'framer-motion';
+import {HiDownload} from 'react-icons/hi'
 import Link from 'next/link';
-
+import { IoMdMail } from "react-icons/io";
 import MagneticIcons from './MagneticIcons';
 import MagneticText from './MagneticText';
+import { GoArrowUpRight } from "react-icons/go";
 
 
 const Hero = () => {
     const socialLinks = [
-      { href: 'https://linkedin.com/', icon: <FaLinkedin size={25} /> },
-      { href: 'https://github.com/', icon: <FaGithub size={25} /> },
-      { href: 'https://stackoverflow.com/', icon: <BsFillPersonLinesFill size={25} /> },
+      { href: 'https://www.linkedin.com/in/mig-caridade/', icon: <FaLinkedin size={25} /> },
+      { href: 'https://github.com/mik-dmi', icon: <FaGithub size={25} /> },
+      { href: 'mailto:miguel.caridade.work@gmail.com', icon: <IoMdMail size={25} /> },
     ];
   
     const [activeLink, setActiveLink] = useState(0);
@@ -49,7 +49,7 @@ const Hero = () => {
                     <ul>
                       {socialLinks.map((link, index) => (
                         <li key={index} className={`my-[2rem] text-[#8892b0] flex justify-center items-center ${activeLink === index ? 'active' : ''}`}>
-                          <a href={link.href} target="_blank" className="">
+                          <a href={link.href} target="_blank" >
                             {link.icon}
                           </a>
                         </li>
@@ -74,19 +74,23 @@ const Hero = () => {
                         and responsive web applications to enhance user interactions online.
                       </p>
                       <div>
-                        <button className='text-white group border-2 px-6 py-3 my-2 flex items-center hover:bg-pink-600 hover:border-pink-600'>
-                          Download Resume
-                          <span className='group-hover:rotate-90 duration-300'>
-                          { /*<HiArrowNarrowRight className='ml-3 ' />*/}
+                      <Link href={'/#contact-section'}>
+                        <button className='text-white group border-2 px-6 py-3 my-2 flex items-center hover:bg-primary hover:border-primary transition'>
+                        
+                          Contact me here 
+                          <span className=' ml-2 group-hover:rotate-[135deg] duration-500'>
+                          <GoArrowUpRight/>
                           </span>
+                      
                         </button>
+                      </Link>
                       </div>
                     </div>
                     <div className='flex items-end ml-auto justify-center overflow-hidden relative h-fit self-end '>
             
                       <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
                         width="1080.000000pt" height="1080.000000pt" viewBox="0 0 1080.000000 1080.000000"
-                        preserveAspectRatio="xMidYMid meet" className='w-[18rem] h-fit animate-spin-slow transition'>
+                        preserveAspectRatio="xMidYMid meet" className='w-[18rem] h-fit animate-spin animate_spin  animate-transition'>
 
                         <g transform="translate(0.000000,1080.000000) scale(0.100000,-0.100000)"
                         fill={`${isHovered ?  '#ccd6f6' : '#C02666'}`} stroke="none">
@@ -257,15 +261,15 @@ const Hero = () => {
                         absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 p-[5rem] 
                         '>
                           <MagneticIcons>
-                            <div className='cursor-pointer w-[6rem] h-[6rem] flex items-center justify-center 
+                            <div className='cursor-pointer w-[7rem] h-[7rem] flex items-center justify-center 
                               rounded-full   transition hover:bg-primary  hover:text-secondary bg-white m-[0.2rem]'      onMouseEnter={handleMouseEnter}
                               onMouseLeave={handleMouseLeave}>
                               
-                              <Link href="m@gmail.com" className='w-full h-full '>
+                              <a href={"/Resume_Miguel_Caridade.pdf"} className='w-full h-full ' target="_blank" >
                                 <MagneticText>
-                                  Hire me
+                                  Resume <HiDownload/>
                                 </MagneticText>
-                              </Link>
+                              </a>
                             
                             </div>
                             </MagneticIcons>

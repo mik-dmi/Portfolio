@@ -56,12 +56,7 @@ export default function Home() {
   
   
   const targetEndSectionRef = useRef(null);
-  const targetEndHamburgerRef = useRef(null);
-  
-
-  const { scrollYProgress: scrollYProgressHamburger } =useScroll({
-    target: targetEndHamburgerRef,
-  });
+   
   const { scrollYProgress: scrollYProgressEndSection } = useScroll({
     target: targetEndSectionRef,
   });
@@ -71,7 +66,6 @@ export default function Home() {
   const hueProject = useTransform(scrollYProgressEndSection, [0,0.8 ,1], [0, 0 ,100]);
   const opacityProject = useTransform(scrollYProgressEndSection, [0, 0.7, 0.8, 1], [1,1, 0 ,0]);
   const opacityFooter = useTransform(scrollYProgressEndSection, [0, 0.9, 1], [0, 0,1]);
-  const opacityHamburger = useTransform(scrollYProgress, [0, 0.7 ,0.9,1], [0, 0,1, 1]);
   const scaleHamburger = useTransform(scrollYProgress, [0.7 ,0.9,1], [0.3,1, 1]);
   
   const backgroundColorProject = useTransform(
@@ -104,7 +98,7 @@ export default function Home() {
                 style={{ opacity: opacityAboutSection }} 
                 >        
                 <motion.div  
-                style={{ scale: opacityAboutSection }}
+                style={{ scale:scaleHamburger  }}
                 className="fixed top-4 right-4 z-20"
                > 
                   <HamburgerMenu backgroundColor={"primary"}/>

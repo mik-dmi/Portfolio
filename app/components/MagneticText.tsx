@@ -17,8 +17,8 @@ function MagneticText({ children }: MagneticIconsProps) {
 
     if (boundingClientRect) {
       const { width, height, left, top } = boundingClientRect;
-      const x = (clientX - (left + width / 2)) * 0.4;
-      const y = (clientY - (top + height / 2) ) * 0.4;
+      const x = (clientX - (left + width / 2)) * 0.3;
+      const y = (clientY - (top + height / 2) ) * 0.3;
       setPosition({ x, y });
     }
   };

@@ -6,10 +6,10 @@ import {motion} from 'framer-motion'
 
 
 const footerLinks = [
-  { name: "Linkedin", href: "/" },
-  { name: "Mail", href: "/" },
-  { name: "GitHub", href: "/" },
-  { name: "Resume", href: "/" },
+  { name: "Linkedin", href: "https://www.linkedin.com/in/mig-caridade/" },
+  { name: "Mail", href: "mailto:miguel.caridade.work@gmail.com" },
+  { name: "GitHub", href: "https://github.com/mik-dmi" },
+  { name: "Resume", href: "/Resume_Miguel_Caridade.pdf" },
 ]
 
 const slideIn = {
@@ -103,9 +103,9 @@ const DropMenuLinks = () => {
               exit="exit"
               key={`f_${i}`}
               >
-                <Link className="text-lg font-poppins cursor-pointer text-white hover:text-backgroundHero w-[50%] mt-4 " href={link.href}>
+                <a className="text-lg font-poppins cursor-pointer text-white hover:text-backgroundHero w-[50%] mt-4 " href={link.href} target="_blank">
                   {link.name}
-                </Link>
+                </a>
               </motion.div>
             )
           })}

@@ -33,7 +33,7 @@ function MagneticIcons({ children }: MagneticIconsProps) {
       onMouseLeave={mouseLeave}
       ref={magnetic}
       animate={{ x, y }}
-      transition={{ type: 'spring', stiffness: 150, damping: 4, mass: 0.5 }}
+      transition={{ type: 'spring', stiffness: 140, damping: 5, mass: 0.5 }}
     >
       {children} {/* Use children directly */}
     </motion.div>
