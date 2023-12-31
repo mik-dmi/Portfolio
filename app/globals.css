@@ -68,9 +68,13 @@
 body {
   font-family: var(--font-poppins)
 }
-.animate_spin {
+.animate_spin { /*its the spinner in the Hero section*/
   /*animation: spin 5s linear(0.62 -9.82%, 0.79 -2.46%, 0.82 14.92%, 0.84 25.61%, 1.05 27.62%, 1.2 32.97%, 1.25 55.69%, 1.28 73.07%, 1.44 77.08%) infinite;*/
-  animation:spin 5s linear(0.5 -23.18%, 0.78 -7.14%, 0.8 19.6%, 1.05 27.62%, 1.29 34.97%, 1.31 54.36%, 1.49 60.38%) infinite;
+  /*animation:spin 5s linear(0.5 -23.18%, 0.78 -7.14%, 0.8 19.6%, 1.05 27.62%, 1.29 34.97%, 1.31 54.36%, 1.49 60.38%) infinite;*/
+  animation: spin 3.5s linear(0.53 -27.19%, 0.76 -16.09%, 0.8 19.6%, 1.11 26.95%, 1.29 32.04%, 1.31 73.75%, 1.5 79.77%) infinite;
+}
+.animate_spin_footer{
+  animation: spin 3.5s linear(0.5 -23.18%, 0.71 -8.74%, 0.75 24.68%, 1.22 32.3%, 1.26 69.07%, 1.46 73.75%) infinite;
 }
 .sidebar {
   -webkit-animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;

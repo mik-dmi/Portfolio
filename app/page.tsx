@@ -1,4 +1,5 @@
 "use client"
+
 import About from "./components/About";
 import Footer from "./components/Footer";
 import HamburgerMenu from "./components/HamburgerMenu";
@@ -28,32 +29,6 @@ export default function Home() {
     [0, 100],
     ['#0a192f', '#f5f5f7']
   );
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   
   const targetEndSectionRef = useRef(null);
    
@@ -66,7 +41,7 @@ export default function Home() {
   const hueProject = useTransform(scrollYProgressEndSection, [0,0.8 ,1], [0, 0 ,100]);
   const opacityProject = useTransform(scrollYProgressEndSection, [0, 0.7, 0.8, 1], [1,1, 0 ,0]);
   const opacityFooter = useTransform(scrollYProgressEndSection, [0, 0.9, 1], [0, 0,1]);
-  const scaleHamburger = useTransform(scrollYProgress, [0.7 ,0.9,1], [0.3,1, 1]);
+  const scaleHamburger = useTransform(scrollYProgress, [0, 0.2,0.7 ,0.9,1], [0,0,0.3,1, 1]);
   
   const backgroundColorProject = useTransform(
     hueProject,
@@ -78,7 +53,6 @@ export default function Home() {
   return (
   
       <div  className="h-fit">
-
          
         
         <div ref={targetRef} className=' w-full  flex    '>
@@ -99,7 +73,7 @@ export default function Home() {
                 >        
                 <motion.div  
                 style={{ scale:scaleHamburger  }}
-                className="fixed top-4 right-4 z-20"
+                className={`fixed top-4 right-4 z-20 `}
                > 
                   <HamburgerMenu backgroundColor={"primary"}/>
                 </motion.div >

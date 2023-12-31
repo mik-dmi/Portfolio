@@ -10,9 +10,23 @@ import { IoMdMail } from "react-icons/io";
 import MagneticIcons from './MagneticIcons';
 import MagneticText from './MagneticText';
 import { GoArrowUpRight } from "react-icons/go";
+import { useInView } from 'react-intersection-observer';
+import { useActiveSectionContext } from '@/context/active-section-context';
 
 
 const Hero = () => {
+
+    const{ref, inView} = useInView();
+    const {setActiveSection} = useActiveSectionContext();
+    
+    useEffect(()=> {
+        if(inView){
+            setActiveSection("Skills");
+        }
+    },[inView, setActiveSection]);
+
+
+
     const socialLinks = [
       { href: 'https://www.linkedin.com/in/mig-caridade/', icon: <FaLinkedin size={25} /> },
       { href: 'https://github.com/mik-dmi', icon: <FaGithub size={25} /> },
@@ -44,7 +58,7 @@ const Hero = () => {
 
             
           
-          <div className='flex scroll-mt-28 h-full'>
+          <div ref={ref} id="home-section" className='flex scroll-mt-28 h-full'>
                   <div className=' flex  flex-col justify-end bottom-0 left-4 items-center  '>
                     <ul>
                       {socialLinks.map((link, index) => (
@@ -93,7 +107,7 @@ const Hero = () => {
                         preserveAspectRatio="xMidYMid meet" className='w-[18rem] h-fit animate-spin animate_spin  animate-transition'>
 
                         <g transform="translate(0.000000,1080.000000) scale(0.100000,-0.100000)"
-                        fill={`${isHovered ?  '#ccd6f6' : '#C02666'}`} stroke="none">
+                        fill={`${isHovered ?  '#ccd6f6' : '#e33078'}`} stroke="none">
                         <path d="M4396 9219 c-137 -37 -251 -70 -253 -73 -2 -2 46 -188 108 -414 l111
                         -409 79 20 c48 13 79 26 79 34 0 7 -18 79 -40 160 -23 80 -39 151 -36 158 2 6
                         70 29 151 50 80 22 151 42 156 46 14 9 -21 129 -38 129 -7 0 -79 -18 -160 -40

@@ -3,8 +3,9 @@ import {martialGearScreenShot, diveRightScreenShot,caliBrunchScreenShot , gotScr
 
 
 export  const linksDropDownMenu = [
-    { name: "Home", href: "/" },
+    { name: "Home", href: "/#home-section" },
     { name: "About", href: "/#about-section" },
+    { name: "Skills", href: "/#skills-section" },
     { name: "Projects", href: "/#projects-section" }, 
     { name: "Contact", href: "/#contact-section" },
  ] as const;

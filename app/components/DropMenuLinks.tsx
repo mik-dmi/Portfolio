@@ -3,7 +3,7 @@ import Link from 'next/link'
 import React from 'react'
 import {linksDropDownMenu} from '@/lib/data'
 import {motion} from 'framer-motion'
-
+import { useActiveSectionContext } from '@/context/active-section-context'
 
 const footerLinks = [
   { name: "Linkedin", href: "https://www.linkedin.com/in/mig-caridade/" },
@@ -65,7 +65,9 @@ const perspective = {
 }
 
 
-const DropMenuLinks = () => {
+  
+ const DropMenuLinks = () => {
+  const {activeSection, setActiveSection} = useActiveSectionContext()
   return (
     <div className='flex flex-col justify-between pl-12'>
       <div
@@ -82,9 +84,18 @@ const DropMenuLinks = () => {
             exit="exit"
             initial="initial"
             > 
-                <Link className="font-semibold font-poppins cursor-pointer text-white hover:text-backgroundHero " href={nav.href}>
+                <Link className={`font-semibold font-poppins cursor-pointer  hover:text-backgroundHero ${activeSection && nav.name ===activeSection  ? "text-xl text-backgroundHero   border-backgroundHero border-b-[3px]		line " : "text-white hover:text-backgroundHero text-lg"}`}
+                onClick={()=> setActiveSection(nav.name)}
+                href={nav.href}
+               
+                >
         
-                  {nav.name } 
+                  <span
+                   
+                   
+                  >
+                   {nav.name }
+                  </span>
                 </Link>
             </motion.div>
           </div>
@@ -103,7 +114,10 @@ const DropMenuLinks = () => {
               exit="exit"
               key={`f_${i}`}
               >
-                <a className="text-lg font-poppins cursor-pointer text-white hover:text-backgroundHero w-[50%] mt-4 " href={link.href} target="_blank">
+                <a 
+                className="text-lg font-poppins cursor-pointer text-white hover:text-backgroundHero w-[50%] mt-4 " 
+                href={link.href} target="_blank"
+                >
                   {link.name}
                 </a>
               </motion.div>

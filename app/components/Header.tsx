@@ -8,7 +8,7 @@ import HamburgerMenu from './HamburgerMenu';
 
 
 const Header = () => {
-  
+
   return (
     <header className=' pt-[1rem] flex items-center'>
       <div className='flex items-center w-full sm:justify-between  '> 
@@ -20,7 +20,7 @@ const Header = () => {
         <nav className="hidden gap-11 lg:flex 2xl:ml-16">
         {linksDropDownMenu.map((link, id) => (
           <div key={id}>
-                <Link className="text-lg font-semibold text-white hover:text-primary" href={link.href}>
+                <Link className={`font-semibold  `} href={link.href}>
                   {link.name}
                 </Link>
           </div>

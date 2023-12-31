@@ -1,8 +1,10 @@
 "use client"
-import React from 'react'
+import React, { useEffect } from 'react'
 import SectionHeadings from './SectionHeadings'
 import { ReactIcon, NextIcon, JavaScriptIcon,TypeScriptIcon, CssIcon, TailwindIcon, Git,NodeIcon, HTMLIcon, Python , CIcon} from '../assets/skills_SVG/svgsSkillsIcons';
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { useActiveSectionContext } from '@/context/active-section-context';
+import { useInView } from 'react-intersection-observer';
 const svgComponents = [
     {icon: ReactIcon,
      tag:  "React.js" ,
@@ -53,12 +55,19 @@ const svgComponents = [
 
 
 const Skills = () => {
-
+  const{ref, inView} = useInView();
+  const {setActiveSection} = useActiveSectionContext();
+  
+  useEffect(()=> {
+      if(inView){
+          setActiveSection("Skills");
+      }
+  },[inView, setActiveSection]);
 
 
 
     return (
-        <section className='flex flex-col scroll-mt-28 justify-center items-center mb-40 sm:mb-60'>
+        <section ref={ref} className='flex flex-col scroll-mt-28 justify-center items-center mb-40 sm:mb-60'>
           <SectionHeadings subHeader={"My Technical Knowledge"} header={"My Skills"} />
             <ul className='max-w-[60rem] mt-4 flex flex-wrap justify-center gap-4 text-lg '>
             {svgComponents.map(({ icon: Icon, tag }, index) => {
