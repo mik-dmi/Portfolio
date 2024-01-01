@@ -67,7 +67,7 @@ const perspective = {
 
   
  const DropMenuLinks = () => {
-  const {activeSection, setActiveSection} = useActiveSectionContext()
+  const {activeSection, setActiveSection, setTimeOfLastClick} = useActiveSectionContext()
   return (
     <div className='flex flex-col justify-between pl-12'>
       <div
@@ -85,7 +85,10 @@ const perspective = {
             initial="initial"
             > 
                 <Link className={`font-semibold font-poppins cursor-pointer  hover:text-backgroundHero ${activeSection && nav.name ===activeSection  ? "text-xl text-backgroundHero   border-backgroundHero border-b-[3px]		line " : "text-white hover:text-backgroundHero text-lg"}`}
-                onClick={()=> setActiveSection(nav.name)}
+                onClick={()=> {
+                  setActiveSection(nav.name)
+                  setTimeOfLastClick(Date.now())
+                }}
                 href={nav.href}
                
                 >

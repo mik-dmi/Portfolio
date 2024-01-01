@@ -24,12 +24,7 @@ export default function Home() {
   const opacityHero = useTransform(scrollYProgress, [0, 0.7, 1], [1, 0 ,0]);
   const opacityAboutSection = useTransform(scrollYProgress, [0, 0.7,  0.9, 1], [0, 0,1,1]);
 
-  const backgroundColorHero = useTransform(
-    hueHero,
-    [0, 100],
-    ['#0a192f', '#f5f5f7']
-  );
-  
+
   const targetEndSectionRef = useRef(null);
    
   const { scrollYProgress: scrollYProgressEndSection } = useScroll({
@@ -49,7 +44,12 @@ export default function Home() {
     [ '#f5f5f7','#0a192f']
   );
 
-
+  const backgroundColorHero = useTransform(
+    hueHero,
+    [0, 100],
+    ['#0a192f', '#f5f5f7']
+  );
+  
   return (
   
       <div  className="h-fit">
@@ -57,7 +57,7 @@ export default function Home() {
         
         <div ref={targetRef} className=' w-full  flex    '>
           <motion.div
-            className=' h-full w-full  bg-[#0a192f] origen-center'
+            className=' h-full w-full bg-page-gradient origen-center'
             style={{ backgroundColor: backgroundColorHero }} 
           >
             <motion.div 
@@ -87,13 +87,16 @@ export default function Home() {
       </div>
       <div ref={targetEndSectionRef}>  
         <motion.div style={{ backgroundColor: backgroundColorProject }} >
-          <motion.div className=" mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl"style={{  opacity: opacityProject }}>
+          <motion.div className=" mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl" style={{  opacity: opacityProject }}>
             <Project/>
           </motion.div>
-          
-          <motion.div style={{ opacity: opacityFooter }} >
-            <Footer/>
-          </motion.div>
+          <div className="bg-footer-gradient">
+            <motion.div className=" mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl" style={{ opacity: opacityFooter }} >
+            
+              <Footer/>
+              
+            </motion.div>
+          </div >
         </motion.div> 
       </div> 
     </div>

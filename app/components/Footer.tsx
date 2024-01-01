@@ -4,6 +4,7 @@ import MagneticIcons from './MagneticIcons'
 import MagneticText from './MagneticText';
 import { useActiveSectionContext } from '@/context/active-section-context';
 import { useInView } from 'react-intersection-observer';
+import {linksDropDownMenu} from '@/lib/data'
 
 const Footer = () => {
 
@@ -18,16 +19,18 @@ const Footer = () => {
       setIsHovered(false);
     };
 
-    const{ref, inView} = useInView();
-    const {setActiveSection} = useActiveSectionContext();
+    const{ref, inView} = useInView({
+        threshold:0.75,
+      });
+    const {setActiveSection, timeOfLastClick} = useActiveSectionContext();
     
     useEffect(()=> {
-        if(inView){
+        if(inView && Date.now() - timeOfLastClick >1000){
             setActiveSection("Contact");
         }
-    },[inView, setActiveSection]);
+    },[inView, setActiveSection, timeOfLastClick]);
     return (
-    <footer ref={ref} id="contact-section" className='flex scroll-mt-0 text-secondary flex-col h-[100vh] justify-between items-center  px-6 pt-[11rem] pb-6 relative' >
+    <footer ref={ref} id="contact-section" className='flex scroll-mt-0 text-secondary flex-col h-[100vh] justify-between items-center  px-6 pt-[10rem] pb-6 relative' >
         <div>
             <div className="pb-[6rem] flex flex-col items-center justify-center">
                 <h1 className='text-4xl sm:text-[5rem] font-bold headersColorHero  text-center mb-[1rem] tracking-wider '>Let's work together!</h1>
@@ -46,7 +49,7 @@ const Footer = () => {
                 </ul>
             </div>
             <div className='flex  items-center justify-center text-primary  font-semibold 
-            absolute right-[2rem]  bottom-[2rem] overflow-hidden
+            absolute right-[0rem]  bottom-[2rem] overflow-hidden
             '>
                 <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
             width="1080.000000pt" height="1080.000000pt" viewBox="0 0 1080.000000 1080.000000"
@@ -232,7 +235,7 @@ const Footer = () => {
                             rounded-full   transition hover:bg-primary  hover:text-secondary bg-white m-[0.2rem]'      onMouseEnter={handleMouseEnter}
                             onMouseLeave={handleMouseLeave}>
                             
-                            <a href={"/Resume_Miguel_Caridade.pdf"} className='w-full h-full ' target="_blank" >
+                            <a href={"https://www.linkedin.com/in/mig-caridade/"} className='w-full h-full ' target="_blank" >
                             <MagneticText>
                                 Hire me
                             </MagneticText>
@@ -246,26 +249,14 @@ const Footer = () => {
 
 
         <ul className='flex gap-10 tracking-wider text-[1rem]  '>
-            <li>
-                <Link href="#home">
-                    <span className='hover:text-primary underline underline-offset-4'>Home</span>
-                </Link>
-            </li>
-            <li>
-                <Link href="#about">
-                    <span className='hover:text-primary underline underline-offset-4'>About</span>
-                </Link>
-            </li>
-            <li>
-                <Link href="#skills">
-                    <span className=' hover:text-primary underline underline-offset-4'>Skills</span>
-                </Link>
-            </li>
-            <li>
-                <Link href="#projects">
-                    <span className=' hover:text-primary underline underline-offset-4'>Projects</span>
-                </Link>                
-            </li>
+            {linksDropDownMenu.map((link, index)=>(
+                <li key={index}>
+                    <Link href={link.href}>
+                        <span className='hover:text-primary underline underline-offset-4'>{link.name}</span>
+                    </Link>
+                </li>
+
+            ))}
         </ul>
     </footer>
   )

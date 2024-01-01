@@ -16,14 +16,18 @@ import { useActiveSectionContext } from '@/context/active-section-context';
 
 const Hero = () => {
 
-    const{ref, inView} = useInView();
-    const {setActiveSection} = useActiveSectionContext();
+    const{ref, inView} = useInView(
+      {
+        threshold:0.5,
+      }
+    );
+    const {setActiveSection, timeOfLastClick} = useActiveSectionContext();
     
     useEffect(()=> {
-        if(inView){
-            setActiveSection("Skills");
+        if(inView && Date.now() - timeOfLastClick >1000){
+            setActiveSection("Home");
         }
-    },[inView, setActiveSection]);
+    },[inView, setActiveSection, timeOfLastClick]);
 
 
 
@@ -54,6 +58,10 @@ const Hero = () => {
       setIsHovered(false);
     };
 
+    
+
+
+
   return (
 
             
@@ -75,7 +83,7 @@ const Hero = () => {
               
                     </div>
                   </div>   
-                    <div className=' max-w-[55rem]  my-auto  pl-[14rem] pb-5 flex flex-col justify-center h-full'>
+                    <div className=' max-w-[55rem]  my-auto  pl-[14rem] pb-[60px] flex flex-col justify-center h-full'>
                       <p className='text-primary'>Hi, my name is</p>
                       <h1 className='w-fit text-4xl sm:text-7xl font-bold headersColorHero '>
                         Miguel Caridade
@@ -84,8 +92,7 @@ const Hero = () => {
                         I'm a Software Engineer.
                       </h2>
                       <p className=' w-fit paragraphColorHero leading-relaxed py-4 max-w-[700px]'>
-                        I’m a Web Developer that focuses on Frontend. I specialize in crafting seamless 
-                        and responsive web applications to enhance user interactions online.
+                      I focus on creating web solutions that enhance user interactions online for companies. I specialize in Frontend Development with React.js and Next.js.
                       </p>
                       <div>
                       <Link href={'/#contact-section'}>

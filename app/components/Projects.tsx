@@ -9,14 +9,16 @@ import { useInView } from 'react-intersection-observer';
 
 
 const Projects = () => {
-  const{ref, inView} = useInView();
-  const {setActiveSection} = useActiveSectionContext();
+  const{ref, inView} = useInView({
+    threshold:0.25,
+  });
+  const {setActiveSection, timeOfLastClick} = useActiveSectionContext();
   
   useEffect(()=> {
-      if(inView){
+      if(inView && Date.now() - timeOfLastClick >1000){
           setActiveSection("Projects");
       }
-  },[inView, setActiveSection]);
+  },[inView, setActiveSection, timeOfLastClick]);
   
   return (
     <section ref={ref} id="projects-section" className='flex  scroll-mt-28 flex-col w-full  px-[1rem] mb-28'>

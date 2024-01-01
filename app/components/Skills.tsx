@@ -55,19 +55,22 @@ const svgComponents = [
 
 
 const Skills = () => {
-  const{ref, inView} = useInView();
-  const {setActiveSection} = useActiveSectionContext();
+  const{ref, inView} = useInView({
+
+    threshold:0.85,
+  });
+  const {setActiveSection, timeOfLastClick} = useActiveSectionContext();
   
   useEffect(()=> {
-      if(inView){
+      if(inView && Date.now() - timeOfLastClick >1000){
           setActiveSection("Skills");
       }
-  },[inView, setActiveSection]);
+  },[inView, setActiveSection, timeOfLastClick]);
 
 
 
     return (
-        <section ref={ref} className='flex flex-col scroll-mt-28 justify-center items-center mb-40 sm:mb-60'>
+        <section ref={ref} id="skills-section" className='flex flex-col scroll-mt-28 justify-center items-center mb-40 sm:mb-60'>
           <SectionHeadings subHeader={"My Technical Knowledge"} header={"My Skills"} />
             <ul className='max-w-[60rem] mt-4 flex flex-wrap justify-center gap-4 text-lg '>
             {svgComponents.map(({ icon: Icon, tag }, index) => {
