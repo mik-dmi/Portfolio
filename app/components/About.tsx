@@ -22,7 +22,7 @@ const About = () => {
   },[inView, setActiveSection, timeOfLastClick]);
 
   return (
-    <section ref={ref} id="about-section" className='flex lg:flex-row flex-col w-full pt-[2rem] lg:mb-60 mb-[12rem] scroll-mt-28 px-[1rem] '>
+    <section ref={ref} id="about-section" className='flex lg:flex-row flex-col w-full pt-[2rem] lg:mb-60 mb-[12rem] sm:scroll-mt-28 scroll-mt-15 px-[1rem] '>
 
         <div className=' lg:w-[50%] sm:w-full  w-fit flex items-start justify-center lg:order-1 order-2 lg:mt-0 mt-10'>
             <Image src={profilePic} alt="Profile picture" quality={95} width={400} placeholder="blur" priority={true} className='profilePic '/>

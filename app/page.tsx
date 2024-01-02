@@ -23,21 +23,21 @@ export default function Home() {
   const hueHero = useTransform(scrollYProgress, [0, 0.25 ,0.6, 0.70, 0.9 ,1], [0,0, 40, 65,100 ,100]);
   const opacityHero = useTransform(scrollYProgress, [0, 0.7, 1], [1, 0 ,0]);
   const opacityAboutSection = useTransform(scrollYProgress, [0, 0.7,  0.88, 1], [0, 0,1,1]);
-  const hueHeroSmallScreens = useTransform(scrollYProgress, [0, 0.25 ,0.6, 0.70 ,1], [0,0, 40,100 ,100]);
-  const opacityAboutSectionSmallScreens = useTransform(scrollYProgress, [0, 0.45,  0.65, 1], [0, 0,1,1]);
-
+  const hueHeroSmallScreens = useTransform(scrollYProgress, [0, 0.25 ,0.5, 0.60 ,1], [0,0, 40,100 ,100]);
+  const opacityAboutSectionSmallScreens = useTransform(scrollYProgress, [0, 0.45,  0.6, 1], [0, 0,1,1]);
+  const opacityHeroSmallScreens = useTransform(scrollYProgress, [0, 0.6, 1], [1, 0 ,0]);
   const targetEndSectionRef = useRef(null);
    
   const { scrollYProgress: scrollYProgressEndSection } = useScroll({
     target: targetEndSectionRef,
   });
-  const isSmallScreen = window.innerWidth <= 1024 ;
+  const isSmallScreen = typeof window !== 'undefined' && window.innerWidth <= 1024;
 
 
   const hueProject = useTransform(scrollYProgressEndSection, [0,0.8 ,1], [0, 0 ,100]);
   const opacityProject = useTransform(scrollYProgressEndSection, [0, 0.7, 0.8, 1], [1,1, 0 ,0]);
   const opacityFooter = useTransform(scrollYProgressEndSection, [0, 0.9, 1], [0, 0,1]);
-  const scaleHamburger = useTransform(scrollYProgress, [0, 0.2,0.7 ,0.9,1], [0,0,0.3,1, 1]);
+  const scaleHamburger = useTransform(scrollYProgress, [0, 0.2,0.7 ,0.85,1], [0,0,0.3,1, 1]);
   const scaleHamburgerSmallScreens = useTransform(scrollYProgress, [0, 0.4,0.75 ,1], [0,0.3,1, 1]);
   
   const backgroundColorProject = useTransform(
@@ -70,13 +70,13 @@ export default function Home() {
           >
             <motion.div 
                 className=' h-screen  lg:mx-auto  px-4 sm:px-6 lg:max-w-7xl  flex flex-col justify-between mb-[2rem] '
-                style={{ opacity: opacityHero}}
+                style={{ opacity: isSmallScreen ? opacityHeroSmallScreens : opacityHero}}
                 >  
               <Header/>   
               <Hero/>   
             </motion.div>
             <motion.div 
-                className='mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl '
+                className='mx-auto px-4 sm:px-6 lg:max-w-7xl '
                 style={{ opacity: isSmallScreen ?  opacityAboutSectionSmallScreens : opacityAboutSection  }} 
                 >        
                 <motion.div  
@@ -90,16 +90,16 @@ export default function Home() {
           </motion.div>     
       
       </div>  
-      <div className="  mx-auto lg:w-fit w-full max-w-2xl px-4 sm:px-6 lg:max-w-7xl">       
+      <div className="  mx-auto lg:w-fit w-full  px-4 sm:px-6 lg:max-w-7xl">       
         <Skills/>
       </div>
       <div ref={targetEndSectionRef}>  
         <motion.div style={{ backgroundColor: backgroundColorProject }} >
-          <motion.div className=" mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl" style={{  opacity: opacityProject }}>
+          <motion.div className=" mx-auto  px-4 sm:px-6 lg:max-w-7xl" style={{  opacity: opacityProject }}>
             <Project/>
           </motion.div>
           <div className="bg-footer-gradient">
-            <motion.div className=" mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl" style={{ opacity: opacityFooter }} >
+            <motion.div className=" mx-auto  px-4 sm:px-6 lg:max-w-7xl" style={{ opacity: opacityFooter }} >
             
               <Footer/>
               

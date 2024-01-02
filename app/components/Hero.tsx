@@ -67,10 +67,10 @@ const Hero = () => {
             
           
           <div ref={ref} id="home-section" className='flex scroll-mt-28 h-full w-full'>
-                  <div className=' flex  flex-col justify-end bottom-0 left-4 items-center   '>
+                  <div className=' sm:h-full h-fit flex  flex-col justify-end bottom-0 sm:left-0 left-4 items-center sm:relative absolute   '>
                     <ul>
                       {socialLinks.map((link, index) => (
-                        <li key={index} className={`my-[2rem] text-[#8892b0] flex justify-center items-center ${activeLink === index ? 'active' : ''}`}>
+                        <li key={index} className={`sm:my-[2rem] my-6 text-[#8892b0] flex justify-center items-center ${activeLink === index ? 'active' : ''}`}>
                           <a href={link.href} target="_blank" >
                             {link.icon}
                           </a>
@@ -79,11 +79,11 @@ const Hero = () => {
                     </ul>
 
                     <div className='flex '>
-                      <div className="h-[5rem] w-[0.2rem] bg-[#8892b0] "/>
+                      <div className="sm:h-[5rem] h-[3rem] w-[0.2rem] bg-[#8892b0] "/>
               
                     </div>
                   </div>   
-                    <div className=' lg:max-w-[55rem] max-w-[40rem]  my-auto lg:mx-0 mx-auto xl:pl-[14rem] lg:pl-[11rem] pl-2 lg:p-0 p-auto pb-[60px] flex flex-col justify-center h-full'>
+                    <div className=' lg:max-w-[55rem] max-w-[40rem]  my-auto lg:mx-0 mx-auto xl:pl-[14rem] lg:pl-[11rem] sm:pl-2 pl-6 lg:p-0 p-auto pb-[60px] flex flex-col justify-center h-full'>
                       <p className='text-primary'>Hi, my name is</p>
                       <h1 className='w-fit text-4xl sm:text-7xl font-bold headersColorHero '>
                         Miguel Caridade
@@ -94,7 +94,7 @@ const Hero = () => {
                       <p className=' w-fit paragraphColorHero leading-relaxed py-4 max-w-[700px]'>
                       I focus on creating web solutions that enhance user interactions online for companies. I specialize in Frontend Development with React.js and Next.js.
                       </p>
-                      <div className='sm:ml-0 ml-6'>
+                      <div className='flex sm:justify-start justify-center ml-0 sm:ml-4 md:ml-0 '>
                       <Link href={'/#contact-section'} >
                         <button className='text-white group border-2 px-6 py-3 my-2 flex items-center hover:bg-primary hover:border-primary transition'>
                         

@@ -21,7 +21,7 @@ const Projects = () => {
   },[inView, setActiveSection, timeOfLastClick]);
   
   return (
-    <section ref={ref} id="projects-section" className='flex  scroll-mt-28 flex-col w-full  px-[1rem] mb-28'>
+    <section ref={ref} id="projects-section" className='flex  sm:scroll-mt-28 scroll-mt-17 flex-col w-full  px-[1rem] mb-28'>
       <div className='flex flex-col justify-center items-center px-[1rem] sm:px-[2rem]'>
         <SectionHeadings subHeader={"Explore my recent"} header={"Projects"}/>  
       </div>

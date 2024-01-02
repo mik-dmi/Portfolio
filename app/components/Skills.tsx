@@ -70,7 +70,7 @@ const Skills = () => {
 
 
     return (
-        <section ref={ref} id="skills-section" className='flex flex-col scroll-mt-28 justify-center items-center  lg:mb-60 mb-[12rem]'>
+        <section ref={ref} id="skills-section" className='flex flex-col sm:scroll-mt-28 scroll-mt-20 justify-center items-center  lg:mb-60 mb-[12rem]'>
           <SectionHeadings subHeader={"My Technical Knowledge"} header={"My Skills"} />
             <ul className='max-w-[60rem] mt-4 flex flex-wrap justify-center gap-4 text-lg '>
             {svgComponents.map(({ icon: Icon, tag }, index) => {

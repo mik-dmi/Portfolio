@@ -30,26 +30,15 @@ const Footer = () => {
         }
     },[inView, setActiveSection, timeOfLastClick]);
     return (
-    <footer ref={ref} id="contact-section" className='flex scroll-mt-0 text-secondary flex-col h-[100vh] justify-between items-center  px-6 pt-[10rem] pb-6 relative' >
+    <footer ref={ref} id="contact-section" className='flex scroll-mt-0 text-secondary flex-col h-[100vh] w-full justify-between items-center sm:pt-[10rem] pt-[8rem]  pb-6 relative' >
         <div>
             <div className="pb-[6rem] flex flex-col items-center justify-center">
-                <h1 className='text-4xl sm:text-[5rem] font-bold headersColorHero  text-center mb-[1rem] tracking-wider '>Let's work together!</h1>
-                <h2 className='text-4xl sm:text-7xl font-bold paragraphColorHero  tracking-wider mt-[1rem] '>Start by saying Hi</h2>
-                <ul className='flex  mt-[5rem] self-center gap-12 px-12 '>
-                    <a href="https://www.linkedin.com/in/mig-caridade/" target="_blank">
-                    <button className='text-white w-[180px] group border-2 text-[1.8rem] tracking-wider px-6 py-2 my-2 flex items-center hover:bg-backgroundHero bg-primary hover:border-primary transition  justify-center'>
-                            <span>Linkedin</span>               
-                        </button>
-                    </a>
-                    <a href="mailto:miguel.caridade.work@gmail.com" target="_blank">
-                        <button className='text-white w-[180px] group border-2 text-[1.8rem] tracking-wider px-6 py-2 my-2 flex items-center hover:bg-backgroundHero bg-primary hover:border-primary transition  justify-center'>
-                            <span>Email</span>               
-                        </button>
-                    </a>
-                </ul>
-            </div>
-            <div className='flex  items-center justify-center text-primary  font-semibold 
-            absolute right-[0rem]  bottom-[2rem] overflow-hidden
+                <div className='min-w-[330] flex flex-col '>
+                    <h1 className='flex flex-wrap text-3xl sm:text-5xl md:text-6xl lg:text-[5rem]  font-bold headersColorHero  text-center mb-[1rem] tracking-wider '>Let's work together!</h1>
+                    <h2 className='flex flex-wrap text-2xl sm:text-4xl  md:text-5xl lg:text-7xl font-bold paragraphColorHero  tracking-wider mt-[1rem]  justify-center  '>Start by saying Hi</h2>
+                </div>
+                <div className='flex  items-center justify-center text-primary  font-semibold 
+            sm:absolute relative right-[0rem]  sm:bottom-[2rem] bottom-[-4rem] overflow-hidden sm:mx-auto
             '>
                 <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
             width="1080.000000pt" height="1080.000000pt" viewBox="0 0 1080.000000 1080.000000"
@@ -245,10 +234,24 @@ const Footer = () => {
                     </MagneticIcons>
                 </div>
             </div>
+                <ul className=' md:flex hidden  sm:mt-[5rem] mt-0 self-center sm:gap-12 gap-8 sm:px-12 px-4 '>
+                    <a href="https://www.linkedin.com/in/mig-caridade/" target="_blank">
+                    <button className='text-white w-[180px] group border-2 sm:text-[1.8rem] text-[1.5rem] tracking-wider px-6 py-2 my-2 flex items-center hover:bg-transparent bg-primary/[0.8] hover:border-primary transition  justify-center'>
+                            <span>Linkedin</span>               
+                        </button>
+                    </a>
+                    <a href="mailto:miguel.caridade.work@gmail.com" target="_blank">
+                        <button className='text-white w-[180px] group border-2 sm:text-[1.8rem] text-[1.5rem] tracking-wider px-6 py-2 my-2 flex items-center hover:bg-transparent bg-primary/[0.8] hover:border-primary transition  justify-center'>
+                            <span>Email</span>               
+                        </button>
+                    </a>
+                </ul>
+            </div>
+            
         </div>
 
 
-        <ul className='flex gap-10 tracking-wider text-[1rem]  '>
+        <ul className='flex sm:gap-10 gap-5 tracking-wider sm:text-[1rem] text-[0.8rem]  '>
             {linksDropDownMenu.map((link, index)=>(
                 <li key={index}>
                     <Link href={link.href}>
