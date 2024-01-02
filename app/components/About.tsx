@@ -22,14 +22,16 @@ const About = () => {
   },[inView, setActiveSection, timeOfLastClick]);
 
   return (
-    <section ref={ref} id="about-section" className='flex w-full pt-[2rem] mb-60 scroll-mt-28 px-[1rem] '>
+    <section ref={ref} id="about-section" className='flex lg:flex-row flex-col w-full pt-[2rem] lg:mb-60 mb-[12rem] scroll-mt-28 px-[1rem] '>
 
-        <div className=' w-[50%] flex items-start justify-center'>
+        <div className=' lg:w-[50%] sm:w-full  w-fit flex items-start justify-center lg:order-1 order-2 lg:mt-0 mt-10'>
             <Image src={profilePic} alt="Profile picture" quality={95} width={400} placeholder="blur" priority={true} className='profilePic '/>
         </div>
             
-        <div className=' w-[50%] px-[2rem] pb-[2rem]'>
-            <SectionHeadings subHeader={"What I do"} header={"About me"}/>        
+        <div className=' lg:w-[50%] w-full px-[2rem] pb-[2rem] lg:order-2 order-1'>
+            <div className='lg:w-full w-fit'>
+              <SectionHeadings subHeader={"What I do"} header={"About me"}/>        
+            </div>
             <p className='paragraphColor leading-relaxed '> Hi! I'm Miguel and I'm a <span className='font-medium'>Software Engineer</span> with a <span className='font-medium'>Master's degree in Computer Science
                 and Engineering</span>. I'm passionate about developing software that <span className='font-medium'>improves 
                 users experiences on the Web</span>. I focus on <span className='font-medium'>Frontend Development</span>, but have knowledge of Backend development as well.</p>

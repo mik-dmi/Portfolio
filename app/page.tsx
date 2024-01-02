@@ -22,21 +22,23 @@ export default function Home() {
   })
   const hueHero = useTransform(scrollYProgress, [0, 0.25 ,0.6, 0.70, 0.9 ,1], [0,0, 40, 65,100 ,100]);
   const opacityHero = useTransform(scrollYProgress, [0, 0.7, 1], [1, 0 ,0]);
-  const opacityAboutSection = useTransform(scrollYProgress, [0, 0.7,  0.9, 1], [0, 0,1,1]);
-
+  const opacityAboutSection = useTransform(scrollYProgress, [0, 0.7,  0.88, 1], [0, 0,1,1]);
+  const hueHeroSmallScreens = useTransform(scrollYProgress, [0, 0.25 ,0.6, 0.70 ,1], [0,0, 40,100 ,100]);
+  const opacityAboutSectionSmallScreens = useTransform(scrollYProgress, [0, 0.45,  0.65, 1], [0, 0,1,1]);
 
   const targetEndSectionRef = useRef(null);
    
   const { scrollYProgress: scrollYProgressEndSection } = useScroll({
     target: targetEndSectionRef,
   });
-  
+  const isSmallScreen = window.innerWidth <= 1024 ;
 
 
   const hueProject = useTransform(scrollYProgressEndSection, [0,0.8 ,1], [0, 0 ,100]);
   const opacityProject = useTransform(scrollYProgressEndSection, [0, 0.7, 0.8, 1], [1,1, 0 ,0]);
   const opacityFooter = useTransform(scrollYProgressEndSection, [0, 0.9, 1], [0, 0,1]);
   const scaleHamburger = useTransform(scrollYProgress, [0, 0.2,0.7 ,0.9,1], [0,0,0.3,1, 1]);
+  const scaleHamburgerSmallScreens = useTransform(scrollYProgress, [0, 0.4,0.75 ,1], [0,0.3,1, 1]);
   
   const backgroundColorProject = useTransform(
     hueProject,
@@ -44,8 +46,14 @@ export default function Home() {
     [ '#f5f5f7','#0a192f']
   );
 
+  
   const backgroundColorHero = useTransform(
     hueHero,
+    [0, 100],
+    ['#0a192f', '#f5f5f7']
+  );
+  const backgroundColorProjectSmallScreens = useTransform(
+    hueHeroSmallScreens,
     [0, 100],
     ['#0a192f', '#f5f5f7']
   );
@@ -58,7 +66,7 @@ export default function Home() {
         <div ref={targetRef} className=' w-full  flex    '>
           <motion.div
             className=' h-full w-full bg-page-gradient origen-center'
-            style={{ backgroundColor: backgroundColorHero }} 
+            style={{ backgroundColor:isSmallScreen ? backgroundColorProjectSmallScreens : backgroundColorHero }} 
           >
             <motion.div 
                 className=' h-screen  lg:mx-auto  px-4 sm:px-6 lg:max-w-7xl  flex flex-col justify-between mb-[2rem] '
@@ -69,10 +77,10 @@ export default function Home() {
             </motion.div>
             <motion.div 
                 className='mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl '
-                style={{ opacity: opacityAboutSection }} 
+                style={{ opacity: isSmallScreen ?  opacityAboutSectionSmallScreens : opacityAboutSection  }} 
                 >        
                 <motion.div  
-                style={{ scale:scaleHamburger  }}
+                style={{ scale: isSmallScreen ? scaleHamburgerSmallScreens : scaleHamburger  }}
                 className={`fixed top-4 right-4 z-20 `}
                > 
                   <HamburgerMenu backgroundColor={"primary"}/>
@@ -82,7 +90,7 @@ export default function Home() {
           </motion.div>     
       
       </div>  
-      <div className=" mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl">       
+      <div className="  mx-auto lg:w-fit w-full max-w-2xl px-4 sm:px-6 lg:max-w-7xl">       
         <Skills/>
       </div>
       <div ref={targetEndSectionRef}>  

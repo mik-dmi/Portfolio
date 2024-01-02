@@ -66,8 +66,8 @@ const Hero = () => {
 
             
           
-          <div ref={ref} id="home-section" className='flex scroll-mt-28 h-full'>
-                  <div className=' flex  flex-col justify-end bottom-0 left-4 items-center  '>
+          <div ref={ref} id="home-section" className='flex scroll-mt-28 h-full w-full'>
+                  <div className=' flex  flex-col justify-end bottom-0 left-4 items-center   '>
                     <ul>
                       {socialLinks.map((link, index) => (
                         <li key={index} className={`my-[2rem] text-[#8892b0] flex justify-center items-center ${activeLink === index ? 'active' : ''}`}>
@@ -83,7 +83,7 @@ const Hero = () => {
               
                     </div>
                   </div>   
-                    <div className=' max-w-[55rem]  my-auto  pl-[14rem] pb-[60px] flex flex-col justify-center h-full'>
+                    <div className=' lg:max-w-[55rem] max-w-[40rem]  my-auto lg:mx-0 mx-auto xl:pl-[14rem] lg:pl-[11rem] pl-2 lg:p-0 p-auto pb-[60px] flex flex-col justify-center h-full'>
                       <p className='text-primary'>Hi, my name is</p>
                       <h1 className='w-fit text-4xl sm:text-7xl font-bold headersColorHero '>
                         Miguel Caridade
@@ -94,8 +94,8 @@ const Hero = () => {
                       <p className=' w-fit paragraphColorHero leading-relaxed py-4 max-w-[700px]'>
                       I focus on creating web solutions that enhance user interactions online for companies. I specialize in Frontend Development with React.js and Next.js.
                       </p>
-                      <div>
-                      <Link href={'/#contact-section'}>
+                      <div className='sm:ml-0 ml-6'>
+                      <Link href={'/#contact-section'} >
                         <button className='text-white group border-2 px-6 py-3 my-2 flex items-center hover:bg-primary hover:border-primary transition'>
                         
                           Contact me here 
@@ -107,7 +107,7 @@ const Hero = () => {
                       </Link>
                       </div>
                     </div>
-                    <div className='flex items-end ml-auto justify-center overflow-hidden relative h-fit self-end '>
+                    <div className='lg:flex hidden items-end ml-auto justify-center overflow-hidden relative h-fit self-end '>
             
                       <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
                         width="1080.000000pt" height="1080.000000pt" viewBox="0 0 1080.000000 1080.000000"
@@ -282,7 +282,7 @@ const Hero = () => {
                         absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 p-[5rem] 
                         '>
                           <MagneticIcons>
-                            <div className='cursor-pointer w-[7rem] h-[7rem] flex items-center justify-center 
+                            <div className='cursor-pointer  xl:w-[7rem] w-[6.5rem] xl:h-[7rem] h-[6.5rem]   flex items-center justify-center 
                               rounded-full   transition hover:bg-primary  hover:text-secondary bg-white m-[0.2rem]'      onMouseEnter={handleMouseEnter}
                               onMouseLeave={handleMouseLeave}>
                               

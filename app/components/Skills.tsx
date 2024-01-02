@@ -70,7 +70,7 @@ const Skills = () => {
 
 
     return (
-        <section ref={ref} id="skills-section" className='flex flex-col scroll-mt-28 justify-center items-center mb-40 sm:mb-60'>
+        <section ref={ref} id="skills-section" className='flex flex-col scroll-mt-28 justify-center items-center  lg:mb-60 mb-[12rem]'>
           <SectionHeadings subHeader={"My Technical Knowledge"} header={"My Skills"} />
             <ul className='max-w-[60rem] mt-4 flex flex-wrap justify-center gap-4 text-lg '>
             {svgComponents.map(({ icon: Icon, tag }, index) => {
@@ -132,7 +132,7 @@ const Skills = () => {
                 className=' '>
                 <motion.div
                   
-                  className=' flex px-6 gap-2 w-[] justify-center items-center  bg-white   shadow-sm border-[1px] border-primary/[0.2] rounded-xl  '
+                  className=' flex px-6 gap-2  justify-center items-center  bg-white   shadow-sm border-[1px] border-primary/[0.2] rounded-xl  '
                   style={{
                     rotateY,
                     rotateX,
@@ -148,7 +148,7 @@ const Skills = () => {
                   onMouseMove={handleMouseMove}
                   onMouseLeave={handleMouseLeave}
                 >   
-                <div   className='w-[2rem]'
+                <div   className='sm:w-[2rem] w-[1.5rem]'
                  style={{
                     transform: "translateZ(50px)",
                   }}>
@@ -158,7 +158,7 @@ const Skills = () => {
                     style={{
                       transform: "translateZ(50px)",
                     }}
-                    className='tracking-wider text-[1.5rem] py-4 headersColor headersColor '
+                    className='tracking-wider sm:text-[1.5rem] text-[1.1rem] py-4 headersColor headersColor '
                   >
                     {tag}
                   </p>

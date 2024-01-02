@@ -69,7 +69,7 @@ export default function Project({
                     </a>
                     </div>
                 </div>
-                <Image src={imageUrl} alt='My projects' quality={95} className='absolute top-10 -right-40 w-[38rem]
+                <Image src={imageUrl} alt='My projects' quality={95} className='absolute hidden sm:block top-10 -right-40 w-[38rem]
                 rounded-t-lg shadow-2xl group-even:right-[initial] group-even:-left-40 group-hover:-translate-x-3 
                 group-hover:translate-y-3 group-hover:-rotate-2  group-even:group-hover:translate-x-3 
                 group-even:group-hover:translate-y-3 group-even:group-hover:rotate-2 group-hover:scale-[1.07]   transition' />

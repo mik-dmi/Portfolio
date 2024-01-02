@@ -14,7 +14,7 @@ export  const linksDropDownMenu = [
 export const projectsData = [
     {
         title:"Martial Gear",
-        description:"It's a dynamic Martial Arts E-commerce Shop where users can add/remove products to a shopping cart. This project showcases my understanding of Next.js and the ability to connect a frontend to a CMS (Sanity.io) on the backend.",
+        description:"It's a Martial Arts E-commerce Shop where users can add/remove products to a shopping cart. The project showcases my understanding of Next.js and my ability to connect a Frontend to a CMS on the backend.",
         features:["Shopping Card", "Product Filtering", "Product Sorting", "Fetching Data", "Responsive"],
         tags: ["Next.js","TypeScript","Tailwind CSS", "Sanity" , "Stripe", "Shadcn UI" ],
         imageUrl: martialGearScreenShot,
