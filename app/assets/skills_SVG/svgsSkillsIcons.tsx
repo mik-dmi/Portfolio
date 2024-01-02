@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 export const ReactIcon = () => (
         <svg viewBox="0 0 128 128"
         style={{

@@ -2,7 +2,6 @@
 import Link from 'next/link'
 import React from 'react'
 import {linksDropDownMenu} from '@/lib/data'
-import SwitchName from './SwitchName';
 import HamburgerMenu from './HamburgerMenu';
 import { useActiveSectionContext } from '@/context/active-section-context';
 
