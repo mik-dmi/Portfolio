@@ -40,13 +40,13 @@ export default function Project({
         className='mb-3 sm:mb-8 last:mb-0 group'
         >
             <section
-            className='lg:p-0 p-2 rounded-lg bg-slate-200 lg:max-w-[62rem] w-full xl:h-[500px]  h-lg:h-[650px] sm:max-h-[670px] max-h-[580px] border
+            className='lg:p-0 p-2 rounded-lg bg-slate-200 lg:max-w-[62rem] w-full xl:h-[500px]  h-lg:h-[650px] sm:max-h-[670px] max-h-[600px] border
             border-black/5 overflow-hidden lg:pr-8 relative lg:group-even:pl-2 hover:bg-slate-300 transition lg:block flex flex-col sm:text-[1rem] text-[0.9rem]'
             >
 
                 <div className='order-2 pb-6 lg:h-full  h-[55%] px-5 lg:pl-10 sm:pr-2 lg:pt-6 pt-5 lg:max-w-[52%] w-full flex flex-col lg:group-even:ml-[29rem] group-even:ml-[0rem] lg:group-odd:mr-[29rem] group-odd:mr-[0rem]'>
                     <h3 className='text-2xl font-semibold mb-2 lg:text-left text-center'>{title}</h3>
-                    <p className=" leading-relaxed text-gray-700">{description}</p>
+                    <p className=" leading-relaxed sm:text-[1rem] text-[0.8rem] text-gray-700">{description}</p>
                     <div className='mt-auto flex lg:flex-col flex-row justify-between'>
                         <div className='lg:w-full w-[50%]  md:block hidden'>
                             <h4 className='text-xl font-semibold mb-1 lg:text-left text-center'>Features</h4>
@@ -80,7 +80,7 @@ export default function Project({
                 group-even:group-hover:translate-y-3 group-even:group-hover:rotate-2 group-hover:scale-[1.07]   
  
                 transition' />
-                <div className='lg:hidden block lg:h-[50%] h-[45%] object-center overflow-hidden'>
+                <div className='lg:hidden block lg:h-[50%]  object-center overflow-hidden sm:h-[45%] min-h-[170px] '>
                 <Image src={imageUrl} alt='My projects' quality={95} className='order-1  w-full object-fill  rounded-t-lg ' />
                             
 
