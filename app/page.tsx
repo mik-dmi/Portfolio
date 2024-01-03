@@ -34,7 +34,7 @@ export default function Home() {
   const isSmallScreen = typeof window !== 'undefined' && window.innerWidth <= 1024;
 
 
-  const hueProject = useTransform(scrollYProgressEndSection, [0,0.8 ,1], [0, 0 ,100]);
+  const hueProject = useTransform(scrollYProgressEndSection, [0,0.7, 0.88 ,1], [0, 0 ,100,100]);
   const opacityProject = useTransform(scrollYProgressEndSection, [0, 0.7, 0.8, 1], [1,1, 0 ,0]);
   const opacityFooter = useTransform(scrollYProgressEndSection, [0, 0.9, 1], [0, 0,1]);
   const scaleHamburger = useTransform(scrollYProgress, [0, 0.2,0.7 ,0.85,1], [0,0,0.3,1, 1]);
