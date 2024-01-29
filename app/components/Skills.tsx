@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect } from 'react'
 import SectionHeadings from './SectionHeadings'
-import { ReactIcon, NextIcon, JavaScriptIcon,TypeScriptIcon, CssIcon, TailwindIcon, Git,NodeIcon, HTMLIcon, Python , CIcon} from '../assets/skills_SVG/svgsSkillsIcons';
+import { ReactIcon, NextIcon,AngularIcon, JavaScriptIcon,TypeScriptIcon, CssIcon, TailwindIcon, Git,NodeIcon, HTMLIcon, Python , CIcon} from '../assets/skills_SVG/svgsSkillsIcons';
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { useActiveSectionContext } from '@/context/active-section-context';
 import { useInView } from 'react-intersection-observer';
@@ -12,6 +12,10 @@ const svgComponents = [
     {
         icon: NextIcon,
         tag: "Next.js",
+    },
+    {
+      icon: AngularIcon,
+      tag: "Angular",
     },
     {
         icon: JavaScriptIcon,

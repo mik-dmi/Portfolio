@@ -14,9 +14,9 @@ export  const linksDropDownMenu = [
 export const projectsData = [
     {
         title:"Martial Gear",
-        description:"It's a Martial Arts E-commerce Shop where users can add/remove products to a shopping cart. The project showcases my understanding of Next.js and my ability to connect a Frontend to a CMS on the backend.",
-        features:["Shopping Card", "Product Filtering", "Product Sorting", "Fetching Data", "Responsive"],
-        tags: ["Next.js","Tailwind CSS","TypeScript", "Sanity" , "Shadcn/UI" ],
+        description:"Developed a Martial Arts E-commerce Shop. The shop features an AI Chatbot connected to OpenAI to assist customers, a shopping cart, advanced product filtering and sorting, and is powered by a CMS (Sanity.io).",
+        features:["Shopping Card", "Product Filtering", "Product Sorting", "AI Chatbot" ,"Fetching Data", "Responsive"],
+        tags: ["Next.js","Tailwind CSS","TypeScript","OpenAI","Sanity" , "Shadcn/UI" ],
         imageUrl: martialGearScreenShot,
         demoUrl: "https://martial-art-ecommerce-shop.vercel.app/",
         codeUrl:"https://github.com/mik-dmi/Martial-Arts-Ecommerce-Shop-",
