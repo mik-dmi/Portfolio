@@ -34,7 +34,7 @@ const About = () => {
             </div>
             <p className='paragraphColor leading-relaxed '> Hi! I'm Miguel and I'm a <span className='font-medium'>Software Engineer</span> with a <span className='font-medium'>Master's degree in Computer Science and Engineering</span>. 
               I'm passionate about developing software that <span className='font-medium'>improves user experiences on the Web</span>. 
-              I am a <span className='font-medium'>Web Developer</span> with knowledge in both Backend and Frontend, focusing on <span className='font-medium'>Frontend Development</span></p>.
+              I am a <span className='font-medium'>Web Developer</span> with knowledge in both <span className='font-medium'>Backend</span> and <span className='font-medium'>Frontend</span>, focusing on <span className='font-medium'>Frontend Development</span></p>.
 
             <p className='paragraphColor leading-relaxed pt-2 pb-4'>Beyond Coding and  Web Development, I'm also passionate about doing <span className='font-medium'>KickBoxing</span>, <span className='font-medium'>Scuba Diving</span> and <span className='font-medium'>Learning Languages</span>
             (I'm fluent in <span className='font-medium'>Portuguese</span> <ReactCountryFlag countryCode="PT" svg style={{marginBottom:"0.2rem"}} />, <span className='font-medium'>English</span> <ReactCountryFlag countryCode="Gb" style={{marginBottom:"0.2rem"}} svg />  and <span className='font-medium'>Swedish</span> <ReactCountryFlag countryCode="SE" svg style={{marginBottom:"0.2rem"}}/>)  </p>
