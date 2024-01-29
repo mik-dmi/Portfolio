@@ -1,6 +1,6 @@
 import React from 'react'
 import SectionHeadings from './SectionHeadings'
-import { ReactIcon, NextIcon,AngularIcon, JavaScriptIcon,TypeScriptIcon, CssIcon, TailwindIcon, Git,NodeIcon } from '../assets/skills_SVG/svgsSkillsIcons';
+import { ReactIcon, NextIcon, JavaScriptIcon,TypeScriptIcon, CssIcon, TailwindIcon, Git,NodeIcon } from '../assets/skills_SVG/svgsSkillsIcons';
 import SkillCards from './SkillCards';
 
 const Skill = () => {
