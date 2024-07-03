@@ -92,7 +92,7 @@ const Hero = () => {
                         I'm a Software Engineer.
                       </h2>
                       <p className=' w-fit paragraphColorHero leading-relaxed py-4 max-w-[700px]'>
-                      I specialize in enhancing online user interactions for companies through web solutions. As a Web Developer, I focus on Frontend development with Angular, React.js, and Next.js.
+                      I specialize in full stack development. As a developer, I focus on Golang and TypeScript for the backend, and React.js and Next.js for the frontend.
                       </p>
                       <div className='flex sm:justify-start justify-center ml-0 sm:ml-4 md:ml-0 '>
                       <Link href={'/#contact-section'} >

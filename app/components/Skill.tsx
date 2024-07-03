@@ -1,10 +1,10 @@
 import React from 'react'
 import SectionHeadings from './SectionHeadings'
-import { ReactIcon, NextIcon, JavaScriptIcon,TypeScriptIcon, CssIcon, TailwindIcon, Git,NodeIcon } from '../assets/skills_SVG/svgsSkillsIcons';
+import { ReactIcon, NextIcon,TypeScriptIcon, CssIcon, TailwindIcon, Git,NodeIcon } from '../assets/skills_SVG/svgsSkillsIcons';
 import SkillCards from './SkillCards';
 
 const Skill = () => {
-    const svgComponentsLeftSide  = [ReactIcon,JavaScriptIcon, CssIcon, Git];
+    const svgComponentsLeftSide  = [ReactIcon, CssIcon, Git];
     const svgComponentsRightSide = [ NextIcon,TypeScriptIcon, TailwindIcon,NodeIcon];
     
     return (

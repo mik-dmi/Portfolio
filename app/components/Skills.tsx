@@ -1,37 +1,38 @@
 "use client"
 import React, { useEffect } from 'react'
 import SectionHeadings from './SectionHeadings'
-import { ReactIcon, NextIcon,AngularIcon, JavaScriptIcon,TypeScriptIcon, CssIcon, TailwindIcon, Git,NodeIcon, HTMLIcon, Python , CIcon} from '../assets/skills_SVG/svgsSkillsIcons';
+import { ReactIcon, NextIcon,GolangIcon, DockerIcon,TypeScriptIcon, CssIcon, TailwindIcon,JestIcon, Git,NodeIcon, HTMLIcon , CIcon} from '../assets/skills_SVG/svgsSkillsIcons';
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { useActiveSectionContext } from '@/context/active-section-context';
 import { useInView } from 'react-intersection-observer';
 const svgComponents = [
-    {icon: ReactIcon,
-     tag:  "React.js" ,
+    {
+        icon: GolangIcon,
+        tag: "Golang",
+    },
+    { 
+        icon: TypeScriptIcon,
+        tag: "TypeScript",
+    },
+    {
+        icon: ReactIcon,
+        tag:  "React.js" ,
     },
     {
         icon: NextIcon,
         tag: "Next.js",
     },
     {
-      icon: AngularIcon,
-      tag: "Angular",
-    },
-    {
-        icon: JavaScriptIcon,
-        tag: "JavaScript",
-    },
-    {
-        icon: TypeScriptIcon,
-        tag: "TypeScript",
-    },
-    {
-        icon: CssIcon,
-        tag: "CSS",
-    },
-    {
         icon: TailwindIcon,
         tag: "Tailwind",
+    },
+    {
+      icon: CssIcon,
+      tag: "CSS",
+    },
+    {
+      icon:HTMLIcon,
+      tag: "HTML",
     },
     {
         icon: Git,
@@ -42,16 +43,16 @@ const svgComponents = [
         tag: "Node.js",
     },
     {
-        icon:HTMLIcon,
-        tag: "HTML",
-    },
-    {
-        icon:Python,
-        tag:"Python"
+        icon:DockerIcon,
+        tag:"Docker"
     },
     {
         icon: CIcon,
         tag: "C",
+    },
+    {
+      icon: JestIcon,
+      tag: "Jest",
     },
     ]    
         /*,, GitHub,NodeIcon]; */// Add more as needed
