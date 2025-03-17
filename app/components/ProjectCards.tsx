@@ -16,6 +16,7 @@ export default function Project({
     description,
     features,
     tags,
+    demoButtonText,
     imageUrl,
     demoUrl,
     codeUrl,
@@ -67,7 +68,7 @@ export default function Project({
                     </div>
                     <div className='flex sm:gap-4 gap-2 mt-auto lg:mx-0 mx-auto mb-2'>
                     <a  href={demoUrl} target="_blank">
-                        <button className='bg-backgroundHero text-white hover:bg-primary hover:border-primary transition border-2 border-white px-2 py-2 color-white flex items-center justify-center gap-2 sm:text-[1rem] text-[0.9rem] sm:w-[10rem] w-[7rem]'><span className='sm:block hidden'>Live </span>Demo<FaArrowUpRightFromSquare/></button>
+                        <button className='bg-backgroundHero text-white hover:bg-primary hover:border-primary transition border-2 border-white px-2 py-2 color-white flex items-center justify-center gap-2 sm:text-[1rem] text-[0.9rem] sm:w-[10rem] w-[7rem]'><span className='sm:block hidden'>{demoButtonText} </span><FaArrowUpRightFromSquare/></button>
                     </a>
                     <a  href={codeUrl} target="_blank">
                         <button className='bg-backgroundHero text-white hover:bg-primary hover:border-primary transition border-2 border-white px-2 py-2 color-white flex items-center justify-center gap-2 sm:text-[1rem] text-[0.9rem] sm:w-[10rem] w-[7rem]'><span className='sm:block hidden'> Source</span>Code<FaGithub/></button>

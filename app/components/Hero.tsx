@@ -286,7 +286,7 @@ const Hero = () => {
                               rounded-full   transition hover:bg-primary  hover:text-secondary bg-white m-[0.2rem]'      onMouseEnter={handleMouseEnter}
                               onMouseLeave={handleMouseLeave}>
                               
-                              <a href={"/Miguel_Caridade_Resume.pdf"} className='w-full h-full ' target="_blank" >
+                              <a href={"/Miguel_Resume.pdf"} className='w-full h-full ' target="_blank" >
                                 <MagneticText>
                                   Resume <HiDownload/>
                                 </MagneticText>

@@ -1,4 +1,4 @@
-import {martialGearScreenShot, diveRightScreenShot,caliBrunchScreenShot , gotScreenShot } from "../app/assets/projects_images"
+import {martialGearScreenShot, diveRightScreenShot,caliBrunchScreenShot , rag_chatbot } from "../app/assets/projects_images"
 
 
 
@@ -13,11 +13,22 @@ export  const linksDropDownMenu = [
 
 export const projectsData = [
     {
+        title:"RAG Restful API for Documentation",
+        description:"Developed a Retrieval-Augmented Generation AI System on a RESTful API that allows you to easily populate the system with your own documents and effortlessly retrieve any specific information by simply asking a question.",   
+        features:["Fast & Secured", "Repository Design Pattern", "Self-Hosted"],
+        tags: ["Golang","Weaviate","Redis", "Docker", "LangChain" ],
+        imageUrl: rag_chatbot,
+        demoButtonText: "Project Details",
+        demoUrl: "https://github.com/mik-dmi/rag_chatbot/blob/master/readme.md",
+        codeUrl:"https://github.com/mik-dmi/rag_chatbot",
+    },
+    {
         title:"Martial Gear",
         description:"Developed a Martial Arts E-commerce Shop. The shop features an AI Chatbot connected to OpenAI to assist customers, a shopping cart, advanced product filtering and sorting, and is powered by a CMS (Sanity.io).",
         features:["Shopping Card", "Product Filtering", "Product Sorting", "AI Chatbot" ,"Fetching Data", "Responsive"],
         tags: ["Next.js","Tailwind CSS","TypeScript","OpenAI","Sanity" , "Shadcn/UI" ],
         imageUrl: martialGearScreenShot,
+        demoButtonText: "Live Demo",
         demoUrl: "https://martial-art-ecommerce-shop.vercel.app/",
         codeUrl:"https://github.com/mik-dmi/Martial-Arts-Ecommerce-Shop-",
     },
@@ -27,6 +38,7 @@ export const projectsData = [
         features:[ "CSS Flexbox", "CSS Grid", "Responsive","Modern Design"],
         tags: ["JavaScript","CSS", "HTML" ],
         imageUrl: caliBrunchScreenShot,
+        demoButtonText: "Live Demo",
         demoUrl: "https://mik-dmi.github.io/Restaurant_Page_Project/",
         codeUrl:"https://github.com/mik-dmi/Restaurant_Page_Project",
     },
@@ -36,18 +48,10 @@ export const projectsData = [
         features:["Responsive", "Typewriter Effect","Custom Animations",  "Modern Design"],
         tags: ["React.js","JavaScript","Tailwind CSS", "Framer Motion" ],
         imageUrl: diveRightScreenShot,
+        demoButtonText: "Live Demo",
         demoUrl: "https://diving-center-website.vercel.app/",
         codeUrl:"https://github.com/mik-dmi/Scuba-Diving-Website",
     },
-    {
-        title:"GOT Quotes",
-        description:"Developed a web application centered around a Game of Thrones Quotes API. The goal was to showcase my understanding of fetching and displaying data from an API.",
-        features:["API Fetching", "Searchable list", "Responsive"],
-        tags: ["React.js","JavaScript","Tailwind CSS", "Framer Motion" ],
-        imageUrl: gotScreenShot,
-        demoUrl: "https://got-quotes-web-application.vercel.app/",
-        codeUrl:"https://github.com/mik-dmi/GOT-API-Fetching-Website",
-    },
-
+  
     
 ] as const;

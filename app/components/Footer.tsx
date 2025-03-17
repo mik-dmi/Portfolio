@@ -32,7 +32,7 @@ const Footer = () => {
     return (
     <footer ref={ref} id="contact-section" className='flex scroll-mt-0 text-secondary flex-col h-[100vh] w-full justify-between items-center sm:pt-[10rem] pt-[8rem]  pb-6 relative' >
         <div>
-            <div className="pb-[6rem] flex flex-col items-center justify-center">
+            <div className=" flex flex-col items-center justify-center">
                 <div className='min-w-[330] flex flex-col '>
                     <h1 className='flex flex-wrap text-3xl sm:text-5xl md:text-6xl lg:text-[5rem]  font-bold headersColorHero  text-center mb-[1rem] tracking-wider '>Let's work together!</h1>
                     <h2 className='flex flex-wrap text-2xl sm:text-4xl  md:text-5xl lg:text-7xl font-bold paragraphColorHero  tracking-wider mt-[1rem]  justify-center  '>Start by saying Hi</h2>
