@@ -1,4 +1,4 @@
-import {martialGearScreenShot, diveRightScreenShot,caliBrunchScreenShot , rag_chatbot } from "../app/assets/projects_images"
+import {martialGearScreenShot, diveRightScreenShot,caliBrunchScreenShot , rag_chatbot , ssh_chatbot} from "../app/assets/projects_images"
 
 
 
@@ -21,6 +21,16 @@ export const projectsData = [
         demoButtonText: "Project Details",
         demoUrl: "https://github.com/mik-dmi/rag_chatbot/blob/master/readme.md",
         codeUrl:"https://github.com/mik-dmi/rag_chatbot",
+    },
+    {
+        title: "Secure Communication Over SSH - CLI Tool",
+        description: "A command-line SSH chat application that enables users to create and join chat rooms for secure, real-time communication using the SSH protocol.",
+        features: ["Fast & Secure", "Concurrency-Safe", "Self-Hosted"],
+        tags: ["Golang", "SSH", "Docker"],
+        imageUrl: ssh_chatbot,
+        demoButtonText: "Project Details",
+        demoUrl: "https://github.com/mik-dmi/secure_chat_over_ssh/blob/main/readme.md",
+        codeUrl: "https://github.com/mik-dmi/secure_chat_over_ssh",
     },
     {
         title:"Martial Gear",
