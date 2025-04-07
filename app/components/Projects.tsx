@@ -25,7 +25,7 @@ const Projects = () => {
       <div className='flex flex-col justify-center items-center px-[1rem] sm:px-[2rem]'>
         <SectionHeadings subHeader={"Explore my recent"} header={"Projects"}/>  
       </div>
-      <div className='flex flex-col justify-center items-center py-4'>
+      <div className='flex flex-col justify-center items-center  pb-40'>
         {projectsData.map((project, index)=>(
           <React.Fragment key={index}> 
             <Project {...project}/>

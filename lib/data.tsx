@@ -13,7 +13,7 @@ export  const linksDropDownMenu = [
 
 export const projectsData = [
     {
-        title:"RAG Restful API for Documentation",
+        title:"RAG Restful API For Documentation",
         description:"Developed a Retrieval-Augmented Generation AI System on a RESTful API that allows you to easily populate the system with your own documents and effortlessly retrieve any specific information by simply asking a question.",   
         features:["Fast & Secured", "Repository Design Pattern", "Self-Hosted"],
         tags: ["Golang","Weaviate","Redis", "Docker", "LangChain" ],
