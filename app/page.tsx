@@ -25,7 +25,7 @@ export default function Home() {
   const opacityAboutSection = useTransform(scrollYProgress, [0, 0.7,  0.88, 1], [0, 0,1,1]);
   const hueHeroSmallScreens = useTransform(scrollYProgress, [0, 0.20 ,0.3, 0.60 ,1], [0,0, 50,100 ,100]);
   const opacityAboutSectionSmallScreens = useTransform(scrollYProgress, [0, 0.45,  0.6], [0, 0.7,1]);
-  const opacityHeroSmallScreens = useTransform(scrollYProgress, [0, 0.6, 1], [1, 0 ,0]);
+  const opacityHeroSmallScreens = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0 ,0]);
   const targetEndSectionRef = useRef(null);
    
   const { scrollYProgress: scrollYProgressEndSection } = useScroll({
@@ -35,7 +35,7 @@ export default function Home() {
 
 
   const hueProject = useTransform(scrollYProgressEndSection, [0,0.7, 0.88 ,1], [0, 0 ,100,100]);
-  const opacityProject = useTransform(scrollYProgressEndSection, [0, 0.7, 0.8, 1], [1,1, 0 ,0]);
+  const opacityProject = useTransform(scrollYProgressEndSection, [0, 0.7, 0.8, 0.9, 1], [1,1, 1, 0 ,0]);
   const opacityFooter = useTransform(scrollYProgressEndSection, [0, 0.9, 1], [0, 0,1]);
   const scaleHamburger = useTransform(scrollYProgress, [0, 0.2,0.7 ,0.85,1], [0,0,0.3,1, 1]);
   const scaleHamburgerSmallScreens = useTransform(scrollYProgress, [0, 0.2, 0.45], [0,0.7, 1]);

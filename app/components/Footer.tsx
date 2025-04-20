@@ -34,8 +34,8 @@ const Footer = () => {
         <div>
             <div className=" flex flex-col items-center justify-center">
                 <div className='min-w-[330] flex flex-col '>
-                    <h1 className='flex flex-wrap text-3xl sm:text-5xl md:text-6xl lg:text-[5rem]  font-bold headersColorHero  text-center mb-[1rem] tracking-wider '>Let's work together!</h1>
-                    <h2 className='flex flex-wrap text-2xl sm:text-4xl  md:text-5xl lg:text-7xl font-bold paragraphColorHero  tracking-wider mt-[1rem]  justify-center  '>Start by saying Hi</h2>
+                    <h1 className='flex flex-wrap text-3xl sm:text-5xl md:text-8xl lg:text-[6rem]  font-bold headersColorHero  text-center md:mb-[1rem] mb-[0.1rem]  tracking-wider '>Let's work together!</h1>
+                    <h2 className='flex flex-wrap text-2xl sm:text-4xl  md:text-5xl lg:text-7xl font-bold paragraphColorHero  tracking-wider md:mt-[1rem] mt-[0.3rem]   justify-center  '>Start by saying HI</h2>
                 </div>
                 <div className='flex  items-center justify-center text-primary  font-semibold 
             sm:absolute relative right-[0rem]  sm:bottom-[2rem] bottom-[-4rem] overflow-hidden sm:mx-auto
@@ -234,6 +234,7 @@ const Footer = () => {
                     </MagneticIcons>
                 </div>
             </div>
+            {/*
                 <ul className=' md:flex hidden  sm:mt-[5rem] mt-0 self-center sm:gap-12 gap-8 sm:px-12 px-4 '>
                     <a href="https://www.linkedin.com/in/mig-caridade/" target="_blank">
                     <button className='text-white w-[180px] group border-2 sm:text-[1.8rem] text-[1.5rem] tracking-wider px-6 py-2 my-2 flex items-center hover:bg-transparent bg-primary/[0.8] hover:border-primary transition  justify-center'>
@@ -246,6 +247,7 @@ const Footer = () => {
                         </button>
                     </a>
                 </ul>
+            */}
             </div>
             
         </div>
