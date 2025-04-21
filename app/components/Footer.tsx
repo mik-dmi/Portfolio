@@ -34,8 +34,8 @@ const Footer = () => {
         <div>
             <div className=" flex flex-col items-center justify-center">
                 <div className='min-w-[330] flex flex-col '>
-                    <h1 className='flex flex-wrap text-3xl sm:text-5xl md:text-8xl lg:text-[6rem]  font-bold headersColorHero  text-center md:mb-[1rem] mb-[0.1rem]  tracking-wider '>Let's work together!</h1>
-                    <h2 className='flex flex-wrap text-2xl sm:text-4xl  md:text-5xl lg:text-7xl font-bold paragraphColorHero  tracking-wider md:mt-[1rem] mt-[0.3rem]   justify-center  '>Start by saying HI</h2>
+                    <h1 className='flex flex-wrap text-3xl sm:text-5xl md:text-7xl lg:text-[5.5rem]  font-bold headersColorHero  text-center md:mb-[1rem] mb-[0.1rem]  tracking-wider '>Let's work together!</h1>
+                    <h2 className='flex flex-wrap text-2xl sm:text-4xl  md:text-4xl lg:text-6xl font-bold paragraphColorHero  tracking-wider md:mt-[1rem] mt-[0.3rem]   justify-center  '>Start by saying HI</h2>
                 </div>
                 <div className='flex  items-center justify-center text-primary  font-semibold 
             sm:absolute relative right-[0rem]  sm:bottom-[2rem] bottom-[-4rem] overflow-hidden sm:mx-auto
