@@ -1,43 +1,44 @@
-"use client"
-import React, { useState, createContext, useContext } from 'react'
-import {linksDropDownMenu} from '@/lib/data'
+'use client';
+import React, { useState, createContext, useContext } from 'react';
+import { linksDropDownMenu } from '@/lib/data';
 
-type SectionName =( typeof linksDropDownMenu)[number]["name"]
+type SectionName = (typeof linksDropDownMenu)[number]['name'];
 
-type ActiveSectionContextProviderProps ={
+type ActiveSectionContextProviderProps = {
     children: React.ReactNode;
-}
-type ActiveSectionContextType={
+};
+type ActiveSectionContextType = {
     activeSection: SectionName;
-    setActiveSection: React.Dispatch<React.SetStateAction<SectionName> >;
+    setActiveSection: React.Dispatch<React.SetStateAction<SectionName>>;
     timeOfLastClick: number;
-    setTimeOfLastClick:React.Dispatch<React.SetStateAction<number> >;
-}
-export const  ActiveSectionContext= createContext<ActiveSectionContextType|null>(null);
+    setTimeOfLastClick: React.Dispatch<React.SetStateAction<number>>;
+};
+export const ActiveSectionContext = createContext<ActiveSectionContextType | null>(null);
 export default function ActiveSectionContextProvider({
-    children
-}:ActiveSectionContextProviderProps   ) {
-    const [activeSection, setActiveSection] = useState<SectionName>('Home')
+    children,
+}: ActiveSectionContextProviderProps) {
+    const [activeSection, setActiveSection] = useState<SectionName>('Home');
     const [timeOfLastClick, setTimeOfLastClick] = useState(0);
-  return <ActiveSectionContext.Provider 
-  value={{
-    activeSection,
-     setActiveSection, 
-     timeOfLastClick,
-     setTimeOfLastClick,
-    
-    }}>{children}</ActiveSectionContext.Provider>;
- 
+    return (
+        <ActiveSectionContext.Provider
+            value={{
+                activeSection,
+                setActiveSection,
+                timeOfLastClick,
+                setTimeOfLastClick,
+            }}
+        >
+            {children}
+        </ActiveSectionContext.Provider>
+    );
 }
 
-
-
-export function useActiveSectionContext(){
+export function useActiveSectionContext() {
     const context = useContext(ActiveSectionContext);
 
-    if(context === null){
+    if (context === null) {
         throw new Error(
-            "useActiveSectionContext must be used within an ActiveSectionContextProvider"
+            'useActiveSectionContext must be used within an ActiveSectionContextProvider'
         );
     }
 

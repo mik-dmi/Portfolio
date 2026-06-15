@@ -1,16 +1,24 @@
-import React from 'react'
-import SectionHeadings from './SectionHeadings'
-import { ReactIcon, NextIcon,TypeScriptIcon, CssIcon, TailwindIcon, Git,NodeIcon } from '../assets/skills_SVG/svgsSkillsIcons';
+import React from 'react';
+import SectionHeadings from './SectionHeadings';
+import {
+    ReactIcon,
+    NextIcon,
+    TypeScriptIcon,
+    CssIcon,
+    TailwindIcon,
+    Git,
+    NodeIcon,
+} from '../assets/skills_SVG/svgsSkillsIcons';
 import SkillCards from './SkillCards';
 
 const Skill = () => {
-    const svgComponentsLeftSide  = [ReactIcon, CssIcon, Git];
-    const svgComponentsRightSide = [ NextIcon,TypeScriptIcon, TailwindIcon,NodeIcon];
-    
+    const svgComponentsLeftSide = [ReactIcon, CssIcon, Git];
+    const svgComponentsRightSide = [NextIcon, TypeScriptIcon, TailwindIcon, NodeIcon];
+
     return (
-        <section className='flex w-full gap-20 py-4 items-start' >
-            <div className='w-full  py-[20vh]'>
-                <ul className='flex flex-col gap-5 '>
+        <section className="flex w-full gap-20 py-4 items-start">
+            <div className="w-full  py-[20vh]">
+                <ul className="flex flex-col gap-5 ">
                     {svgComponentsLeftSide.map((Icon, index) => (
                         <li key={index}>
                             <SkillCards>
@@ -19,16 +27,16 @@ const Skill = () => {
                         </li>
                     ))}
                 </ul>
-            </div>            
-            <div className='sticky w-full top-0 flex h-[70vh] pt-[5rem] items-start  '>
-                <div className='w-full'>
-                    <SectionHeadings subHeader={"My Technical Knowledge"} header={"My Skills"}/>
+            </div>
+            <div className="sticky w-full top-0 flex h-[70vh] pt-[5rem] items-start  ">
+                <div className="w-full">
+                    <SectionHeadings subHeader={'My Technical Knowledge'} header={'My Skills'} />
                 </div>
             </div>
-            <div className='w-full  py-[30vh]'>
-                <ul className='flex flex-col gap-5 '>
+            <div className="w-full  py-[30vh]">
+                <ul className="flex flex-col gap-5 ">
                     {svgComponentsRightSide.map((Icon, index) => (
-                         <li key={index}>
+                        <li key={index}>
                             <SkillCards>
                                 <Icon />
                             </SkillCards>
@@ -36,13 +44,8 @@ const Skill = () => {
                     ))}
                 </ul>
             </div>
- 
-
-
-
-
         </section>
-  )
-}
+    );
+};
 
-export default Skill
+export default Skill;

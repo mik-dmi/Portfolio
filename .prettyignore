@@ -1,0 +1,11 @@
+node_modules
+dist
+supabase/db.types.ts
+package-lock.json
+gl-sast-report.json
+gl-secret-detection-report.json
+.next
+public
+app/assets
+
+
